@@ -3,8 +3,8 @@ from typing import Optional
 
 
 class BookingCheckDates(BaseModel):
-    chekin: str
-    chekout: str
+    checkin: str
+    checkout: str
 
 class BookingResponseData (BaseModel):
     firstname: str
