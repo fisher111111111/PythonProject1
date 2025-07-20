@@ -3,6 +3,10 @@ import requests
 from faker import Faker
 from src.enums.constant_of_url import ConstURL
 from src.enums.constant_of_headers import ConstHeaders
+# import sys
+# import os
+#
+# sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__),'..', 'src')))
 
 fake = Faker()
 BASE_URL = ConstURL.BASE_URL.value
