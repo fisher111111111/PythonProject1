@@ -1,4 +1,4 @@
-from enums.constant_of_url import ConstURL
+from src.enums.constant_of_url import ConstURL
 
 class ItemApiClient:
     def __init__(self, auth_session):
