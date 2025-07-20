@@ -43,7 +43,7 @@ def booking_id(booking_data):
 def auth_session():
     """Create session with authorization and return object of session"""
     session = requests.Session()
-    session.headers.update(ConstHeaders)
+    session.headers.update(ConstHeaders.HEADERS.value)
 
     auth_response = session.post(f'{BASE_URL}/auth', json={"username": "admin", "password": "password123"})
     token = auth_response.json().get("token")

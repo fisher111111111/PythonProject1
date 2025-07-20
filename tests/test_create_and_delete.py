@@ -1,14 +1,15 @@
 import pytest
 
-from Module_4_2.conftest import auth_session
-from constant_of_url import ConstURL
-from project_data import BookingResponseData
-from project_resp_data_validator import validate_response_data
+from conftest import auth_session, booking_data
+from src.enums.constant_of_url import ConstURL
+from src.data_models.project_data import BookingResponseData
+from src.utils.project_resp_data_validator import validate_response_data
 
 class TestBookings:
 
     BASE_URL = ConstURL.BASE_URL.value
-    @pytest.fixture
+
+
     def test_create_booking(self, auth_session, booking_data):
         # Create
         create = auth_session.post(f"{TestBookings.BASE_URL}/booking", json=booking_data)
