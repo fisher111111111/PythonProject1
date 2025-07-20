@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="923271c9-1ecb-4a83-a928-e61164930b0a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../Module_4_2/src/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module_4_2/src/data_models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module_4_2/src/enums/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module_4_2/src/scenarios/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module_4_2/src/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Module_4_2/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/PythonProject1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/apiManager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_models/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_models/project_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/constant_of_headers.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/enums/constant_of_url.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenarios/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenarios/scenarios.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/project_check_data_validator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/project_resp_data_validator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_4_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_create_and_delete.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/PycharmProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/PycharmProjects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/pkg_resources/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/pkg_resources/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/pyparsing/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/pyparsing/core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/pyparsing/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/pyparsing/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/rich/table.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/rich/table.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/six.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/six.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/truststore/_macos.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/truststore/_macos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/urllib3/contrib/_securetransport/bindings.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/urllib3/contrib/_securetransport/bindings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/urllib3/packages/six.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pip/_vendor/urllib3/packages/six.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pkg_resources/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pkg_resources/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pkg_resources/_vendor/pyparsing/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pkg_resources/_vendor/pyparsing/core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pkg_resources/_vendor/pyparsing/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/pkg_resources/_vendor/pyparsing/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/setuptools/_distutils/cygwinccompiler.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/setuptools/_distutils/cygwinccompiler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/setuptools/_vendor/pyparsing/core.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/setuptools/_vendor/pyparsing/core.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/setuptools/_vendor/pyparsing/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Final tasks of section 2.2/venv/Lib/site-packages/setuptools/_vendor/pyparsing/helpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphQL_API_DB/users.db" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphQL_API_DB/users.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_4_2/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_4_2/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_4_2/src/api/1_CreateToken/CreateToken.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_4_2/src/api/4_CreateBooking/CreateBooking.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_4_2/src/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_4_2/src/api/apiManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_4_2/src/api/apiManager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_4_2/src/constants/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_4_2/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_4_2/src/constants/constant_of_URL.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_4_2/src/enums/constant_of_url.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_4_2/src/constants/constant_of_headers.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_4_2/src/enums/constant_of_headers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Module_4_2/tests/test_create_and_delete.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Module_4_2/tests/test_create_and_delete.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PythonProject" beforeDir="false" afterPath="$PROJECT_DIR$/../PythonProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачи из п.5 раздела 2.2/MyXpeHb.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачи из п.5 раздела 2.2/MyXpeHb.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "fisher111111111"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/fisher111111111/GraphQL_API.git",
+    "accountId": "07c1aaa2-1c18-4f62-8bc3-3d102a0cf60a"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="3090rhiW2aewmXl8UNlBNRwBNkS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/user/PycharmProjects/PythonProject1",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\PythonProject1" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-348a24fa61fa-5312c7369657-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.23774.444" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="923271c9-1ecb-4a83-a928-e61164930b0a" name="Changes" comment="" />
+      <created>1753024683496</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753024683496</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
