@@ -1,4 +1,4 @@
-from src.api.apiManager import ItemApiClient
+from src.api.api_manager import ItemApiClient
 
 class ItemScenarios:
     def __init__(self, api_client: ItemApiClient):  # Типизация для ясности
