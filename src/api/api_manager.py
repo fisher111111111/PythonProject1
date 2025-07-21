@@ -3,7 +3,7 @@ from src.enums.constant_of_url import ConstURL
 class ItemApiClient:
     def __init__(self, auth_session):
         self.auth_session = auth_session
-        self.base_url = ConstURL  # Можно также передавать в конструктор, если он может меняться
+        self.base_url = ConstURL.BASE_URL.value  # Можно также передавать в конструктор, если он может меняться
 
     def create_item(self, item_data):
         """Отправляет запрос на создание item."""
