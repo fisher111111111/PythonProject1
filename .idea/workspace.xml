@@ -4,32 +4,65 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="923271c9-1ecb-4a83-a928-e61164930b0a" name="Changes" comment="edit of all files in project">
+    <list default="true" id="923271c9-1ecb-4a83-a928-e61164930b0a" name="Changes" comment="добавление scenarios_booking2.py">
+      <change afterPath="$PROJECT_DIR$/../GraphQL_API/.idea/GraphQL_API.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/bad_api_manager.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/bad_auth_client.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenarios/scenario_booking3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenarios/scenarios_booking.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/потом_удалить.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Задачи из п.5 раздела 2.2/MyXpeHb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/PycharmProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/PycharmProjects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphQL_API_DB/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphQL_API_DB/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PythonProject" beforeDir="false" afterPath="$PROJECT_DIR$/../PythonProject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/auth_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auth_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/health_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/health_check.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_models/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enums/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/enums/constant_of_headers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/constant_of_headers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenarios/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenarios/scenarios_items.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_4_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_4_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачи из п.5 раздела 2.2/MyXpeHb.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачи из п.5 раздела 2.2/MyXpeHb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "fisher111111111"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;fisher111111111&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/fisher111111111/GraphQL_API.git",
-    "accountId": "07c1aaa2-1c18-4f62-8bc3-3d102a0cf60a"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/fisher111111111/GraphQL_API.git&quot;,
+    &quot;accountId&quot;: &quot;07c1aaa2-1c18-4f62-8bc3-3d102a0cf60a&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 7
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="3090rhiW2aewmXl8UNlBNRwBNkS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -38,16 +71,181 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests for test_create_and_delete.TestBookings.executor": "Run",
+    "Python tests.Python tests for test_create_and_delete.TestBookings.test_create_booking.executor": "Run",
+    "Python tests.Python tests in потом_удалить.py.executor": "Run",
+    "Python tests.pytest in bin.executor": "Run",
+    "Python.api_manager.executor": "Run",
+    "Python.auth_client.executor": "Run",
+    "Python.bad_api_manager.executor": "Debug",
+    "Python.bad_auth_client.executor": "Run",
+    "Python.conftest.executor": "Debug",
+    "Python.health_check.executor": "Run",
+    "Python.scenario_booking3.executor": "Run",
+    "Python.scenarios.executor": "Run",
+    "Python.scenarios_booking2.executor": "Run",
+    "Python.потом_удалить.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ShowUsagesActions.previewPropertyKey": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/user/PycharmProjects/PythonProject1",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+    "last_opened_file_path": "C:/Users/user/PycharmProjects/PythonProject1/src/api",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Python"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\PythonProject1\src\api" />
+      <recent name="C:\Users\user\PycharmProjects\PythonProject1\src\enums" />
       <recent name="C:\Users\user\PycharmProjects\PythonProject1" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\PythonProject1" />
+      <recent name="C:\Users\user\PycharmProjects\PythonProject1\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="bad_api_manager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/api" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/api/bad_api_manager.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="health_check" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/api" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/api/health_check.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scenario_booking3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/scenarios" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/scenarios/scenario_booking3.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scenarios_booking2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/scenarios" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/scenarios/scenarios_booking2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_create_and_delete.TestBookings" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_create_and_delete.TestBookings&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in bin" type="tests" factoryName="py.test" nameIsGenerated="true">
+      <module name="PythonProject1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONPATH" value="C:\Users\user\PycharmProjects\PythonProject1\src" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.11" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.health_check" />
+      <item itemvalue="Python.scenario_booking3" />
+      <item itemvalue="Python.bad_api_manager" />
+      <item itemvalue="Python.scenarios_booking2" />
+      <item itemvalue="Python tests.pytest in bin" />
+      <item itemvalue="Python tests.Python tests for test_create_and_delete.TestBookings" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.scenario_booking3" />
+        <item itemvalue="Python.health_check" />
+        <item itemvalue="Python.bad_api_manager" />
+        <item itemvalue="Python.scenarios_booking2" />
+        <item itemvalue="Python tests.Python tests for test_create_and_delete.TestBookings" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -72,7 +270,63 @@
       <option name="project" value="LOCAL" />
       <updated>1753027847927</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="edit of some files in project">
+      <option name="closed" value="true" />
+      <created>1753029106982</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1753029106982</updated>
+    </task>
+    <task id="LOCAL-00003" summary="edit conftest.py in project">
+      <option name="closed" value="true" />
+      <created>1753033105495</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1753033105495</updated>
+    </task>
+    <task id="LOCAL-00004" summary="исправил стр 6 и 7 chekin на сheckin , тоже самое с checkout">
+      <option name="closed" value="true" />
+      <created>1753036235293</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1753036235293</updated>
+    </task>
+    <task id="LOCAL-00005" summary="правка кода">
+      <option name="closed" value="true" />
+      <created>1753036374887</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1753036374887</updated>
+    </task>
+    <task id="LOCAL-00006" summary="правка кода в api_manager, константах и сценариях">
+      <option name="closed" value="true" />
+      <created>1753128209619</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1753128209619</updated>
+    </task>
+    <task id="LOCAL-00007" summary="правка кода в api_manager.py">
+      <option name="closed" value="true" />
+      <created>1753128471998</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1753128471998</updated>
+    </task>
+    <task id="LOCAL-00008" summary="добавление scenarios_booking2.py">
+      <option name="closed" value="true" />
+      <created>1756028979342</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1756028979342</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -88,6 +342,13 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="edit of all files in project" />
-    <option name="LAST_COMMIT_MESSAGE" value="edit of all files in project" />
+    <MESSAGE value="edit of some files in project" />
+    <MESSAGE value="edit conftest.py in project" />
+    <MESSAGE value="исправил стр 6 и 7 chekin на сheckin , тоже самое с checkout" />
+    <MESSAGE value="правка кода" />
+    <MESSAGE value="правка кода в api_manager, константах и сценариях" />
+    <MESSAGE value="правка кода в api_manager.py" />
+    <MESSAGE value="добавление scenarios_booking2.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавление scenarios_booking2.py" />
   </component>
 </project>

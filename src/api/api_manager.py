@@ -1,52 +1,125 @@
+
 import  requests
 from src.enums.constant_of_url import ConstURL
+from src.enums.constant_of_headers import ConstHeaders
+from conftest import booking_data, upd_booking_data, bookingid, patch_booking_data, make_auth_data
 
-class ItemApiClient:
+class BookingApiClient:
     def __init__(self, auth_session):
         self.auth_session = auth_session
         self.base_url = ConstURL.BASE_URL.value  # Можно также передавать в конструктор, если он может меняться
+        self.base_headers = ConstHeaders.HEADERS.value
 
-    def create_item(self, booking_data):
-        """Отправляет запрос на создание item."""
-        response = self.auth_session.post(f"{self.base_url}/booking", json=booking_data)
-        # Базовая проверка, что запрос успешен и мы можем парсить JSON
-        print(response.json())
-        print(response.status_code)
+    def create_booking(self, booking_data):
+        '''
+        Отправляет запрос на создание букинга.
+        '''
+        response = self.auth_session.post(f"{self.base_url}/booking",
+                                          json=booking_data)
         if response.status_code not in (200, 201):
-            response.raise_for_status() # Выбросит HTTPError для плохих статусов
+            response.raise_for_status()
+        response_data = response.json()
+        # print("Create_booking", response.json()) #Раскомментить для проверки содержимого в консоли!
+        return response_data
+
+# if __name__ == "__main__":
+#     auth_session = requests.Session()
+#     client = BookingApiClient(auth_session)
+#     client.create_booking(booking_data())
+
+    def get_booking(self, bookingid):
+        '''
+        Отправляет запрос на получение ID конкретного букинга
+        '''
+        response = self.auth_session.get(f"{self.base_url}/booking/{bookingid}")
+        if response.status_code != 200:
+            response.raise_for_status()
+        json_data = response.json()
+        # print(bookingid)
+        # print(json_data)
+        return json_data
+
+# if __name__ == "__main__":
+#     auth_session = requests.Session()
+#     client = BookingApiClient(auth_session)
+#     client.get_booking(bookingid)
+#     print(f"Получаем тело созданного ID {bookingid}")
+
+    def update_booking(self, bookingid, upd_booking_data):
+        '''
+        Отправляет запрос на обновление букинга
+        '''
+        auth_data = make_auth_data()
+        response = self.auth_session.put(
+            f"{self.base_url}/booking/{bookingid}",
+            json=upd_booking_data,
+            headers=self.base_headers,
+            auth=(auth_data['username'], auth_data['password']))
+        if response.status_code != 200:
+            response.raise_for_status()
         return response.json()
 
-auth_session = requests.Session()
-client = ItemApiClient(auth_session)
-client.create_item({"name": "test"})
-print(client)
+# if __name__ == "__main__":
+#     auth_session = requests.Session()
+#     client = BookingApiClient(auth_session)
+#     client.update_booking(bookingid, upd_booking_data())
+#     new_upd_booking = client.update_booking(bookingid, upd_booking_data())
+#     print(new_upd_booking)
 
-    #
-    # def get_items(self):
-    #     """Отправляет запрос на получение списка items."""
-    #     response = self.auth_session.get(f"{self.base_url}/api/v1/items/")
-    #     if response.status_code != 200:
-    #         response.raise_for_status()
-    #     return response.json()
-    #
-    # def update_item(self, item_id, upd_item_data):
-    #     """Отправляет запрос на обновление item."""
-    #     response = self.auth_session.put(f"{self.base_url}/api/v1/items/{item_id}", json=upd_item_data)
-    #     if response.status_code != 200:
-    #         response.raise_for_status()
-    #     return response.json()
-    #
-    # def patch_item(self,item_id, patch_item_data):
-    #     """Отправляет запрос на частичное обновление item"""
-    #     response = self.auth_session.patch(f"{self.base_url}/api/v1/items/{item_id}", json=patch_item_data)
-    #     if response.status_code != 200:
-    #         response.raise_for_status()
-    #     return response.json()
-    #
-    # def delete_item(self, item_id):
-    #     """Отправляет запрос на удаление item."""
-    #     response = self.auth_session.delete(f"{self.base_url}/api/v1/items/{item_id}")
-    #     if response.status_code != 200: # В REST API для DELETE часто возвращают 204 No Content или 200 OK
-    #         response.raise_for_status()
-    #     # Для DELETE часто нечего возвращать из тела, либо можно вернуть статус-код или сам response
-    #     return response.status_code
+
+    def patch_booking(self,bookingid, patch_booking_data):
+        '''
+        Отправляет запрос на частичное обновление букинга
+        '''
+        auth_data = make_auth_data()
+        response = self.auth_session.patch(f"{self.base_url}/booking/{bookingid}",
+            json=patch_booking_data,
+            auth=(auth_data['username'], auth_data['password']))
+        if response.status_code != 200:
+            response.raise_for_status()
+        return response.json()
+
+# if __name__ == "__main__":
+#     auth_session = requests.Session()
+#     client = BookingApiClient(auth_session)
+#     client.patch_booking(bookingid, patch_booking_data())
+#     new_patch_booking = client.patch_booking(bookingid, patch_booking_data())
+#     print(new_patch_booking)
+
+
+    def get_all_bookings(self):
+        '''
+        Отправляет запрос на удаление букинга.
+        '''
+        response = self.auth_session.get(f"{self.base_url}/booking")
+        if response.status_code != 200:
+            response.raise_for_status()
+        return response.json()
+#
+# if __name__ == "__main__":
+#     auth_session = requests.Session()
+#     client = BookingApiClient(auth_session)
+#     client.get_all_bookings()
+#     bookings = client.get_all_bookings()
+#     print(bookings)
+
+    def delete_booking(self, bookingid):
+        '''
+        Отправляет запрос на удаление букинга.
+        '''
+        auth_data = make_auth_data()
+        response = (self.auth_session.delete
+                    (f"{self.base_url}/booking/{bookingid}",
+                     headers=self.base_headers,
+                     auth=(auth_data['username'], auth_data['password'])))
+        if response.status_code != 201:
+            response.raise_for_status()
+        return response.status_code, response.text
+
+# if __name__ == "__main__":
+#     auth_session = requests.Session()
+#     client = BookingApiClient(auth_session)
+#     status_code, text = client.delete_booking(bookingid)
+#     print(status_code)
+#     print(text)
+#     print(f"Удален выбранный букинг = {bookingid}")
