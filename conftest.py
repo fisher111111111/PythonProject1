@@ -2,14 +2,35 @@ import pytest
 import requests
 from faker import Faker
 from src.enums.constant_of_url import ConstURL
+import time
+from src.scenarios.scenario_ping import PingScenario
 from src.enums.constant_of_headers import ConstHeaders
 from dotenv import load_dotenv
 import os
 
 load_dotenv()
-
 fake = Faker()
 BASE_URL = ConstURL.BASE_URL.value
+
+from scenarios.scenario_ping import PingScenario
+from src.api.health_check import HealthCheck
+
+
+@pytest.fixture(scope="module")
+def ping_check():
+    """Фикстура создает экземпляр PingScenario с правильными зависимостями"""
+    session = requests.Session()
+    health_check = HealthCheck(session)
+    return PingScenario(health_check)
+
+# Фикстура получения времени ответа сервера
+@pytest.fixture(scope="module")
+def time_ping():
+    start_time = time.perf_counter()
+    end_time = time.perf_counter()
+    execution_time = (end_time - start_time) * 1000  # Преобразование результата в миллисекунды
+    return execution_time
+
 # Фикстура генерации отправляемых данных
 @pytest.fixture(scope="session")
 def booking_data():
@@ -118,10 +139,11 @@ def auth_token():
     token_session.headers.update({"Cookie": f'token={booking_token}'})
     # print(token_session.headers)
     # print(booking_auth)
-    return booking_auth, token_session
+    return token_session
 
-# auth_token = auth_token()
-
+@pytest.fixture(scope="module")
+def test_ping():
+    return PingScenario(ConstURL.BASE_URL)
 
 # Фикстура создания сессии авторизации и возврат объекта сессии
 #  @pytest.fixture(scope="session")
