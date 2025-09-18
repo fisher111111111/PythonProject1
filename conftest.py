@@ -1,9 +1,16 @@
 import pytest
 import requests
 from faker import Faker
+from scenarios.scenario_auth import AuthScenario
+from src.api.auth_client import AuthApiClient
+
 from src.enums.constant_of_url import ConstURL
 import time
 from src.scenarios.scenario_ping import PingScenario
+from src.api.health_check import HealthCheck
+
+
+
 from src.enums.constant_of_headers import ConstHeaders
 from dotenv import load_dotenv
 import os
@@ -12,16 +19,22 @@ load_dotenv()
 fake = Faker()
 BASE_URL = ConstURL.BASE_URL.value
 
-from scenarios.scenario_ping import PingScenario
-from src.api.health_check import HealthCheck
+
 
 
 @pytest.fixture(scope="module")
-def ping_check():
+def auth_check():
     """Фикстура создает экземпляр PingScenario с правильными зависимостями"""
     session = requests.Session()
     health_check = HealthCheck(session)
     return PingScenario(health_check)
+
+@pytest.fixture(scope="module")
+def auth_check_1():
+    """Фикстура создает экземпляр AuthScenario с правильными зависимостями"""
+    session = requests.Session()
+    auth = AuthApiClient(session)
+    return AuthScenario(auth)
 
 # Фикстура получения времени ответа сервера
 @pytest.fixture(scope="module")
@@ -32,7 +45,7 @@ def time_ping():
     return execution_time
 
 # Фикстура генерации отправляемых данных
-@pytest.fixture(scope="session")
+#
 def booking_data():
     """Создание данных букинга"""
     return {
@@ -64,7 +77,7 @@ def wrong_booking_data():
     }
 
 # Фикстура для изменённых отправляемых данных
-@pytest.fixture(scope="session")
+# @pytest.fixture(scope="session")
 def upd_booking_data():
     """Данные для полного изменения букинга"""
     return {

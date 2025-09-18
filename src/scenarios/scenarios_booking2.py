@@ -1,6 +1,6 @@
 
 import requests
-from conftest import booking_data, upd_booking_data, patch_booking_data, booking_id, bookingid
+# from conftest import booking_data, upd_booking_data, patch_booking_data
 from src.api.api_manager import BookingApiClient
 
 class BookingScenarios:
@@ -10,10 +10,10 @@ class BookingScenarios:
 
     def create_check_delete_booking(self):
         '''
-        Сценарий 1: создание букинга, проерка ID созданного букинга,
+        Сценарий 1: создание букинга, проdерка ID созданного букинга,
         затем удаление букинга '''
         # 1. Создать букинг
-        create_book = self.api_client.create_booking(booking_data())
+        create_book = self.api_client.create_booking(booking_data()) # вместо booking_data захардкодить прям сюда через Faker
         booking_id = create_book.get("bookingid")
         print("Создан booking_id =", booking_id)
 

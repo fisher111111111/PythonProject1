@@ -1,8 +1,9 @@
 import pytest
 from pydantic import BaseModel, ValidationError
-from requests import Response
+from requests import Response, PreparedRequest
 from typing import Type
 from src.data_models.project_data import BookingResponseData
+from src.data_models.project_data_2 import BookingRequestData, BookingResponseData
 
 def validate_response_data(
     response: Response,
@@ -18,6 +19,36 @@ def validate_response_data(
         data = response.json()
     except Exception as e:
         pytest.fail(f"Ошибка парсинга JSON: {e}\nResponse: {response.text}")
+
+    try:
+        parsed = model(**data)
+    except ValidationError as e:
+        pytest.fail(f"Pydantic валидация не прошла:\n{e}")
+
+    if expected_data:
+        expected_model = model(**expected_data)
+        if parsed.model_dump(exclude_unset=True) != expected_model.model_dump(exclude_unset=True):
+            pytest.fail(
+                f"Данные ответа не совпадают с ожидаемыми:\n"
+                f"Expected: {expected_model.model_dump()}\n"
+                f"Actual:   {parsed.model_dump()}"
+            )
+
+    return parsed
+
+def validate_request_data(
+    request: PreparedRequest,
+    model: Type[BookingRequestData],
+    expected_data: dict | None = None
+) -> BaseModel:
+
+    if request.body == None:
+        pytest.fail(f"Expected body must be not None")
+
+    try:
+        data = request.body
+    except Exception as e:
+        pytest.fail(f"Ошибка парсинга JSON: {e}\nResponse: {request.body}")
 
     try:
         parsed = model(**data)

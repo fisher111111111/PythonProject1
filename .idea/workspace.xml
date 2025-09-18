@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="923271c9-1ecb-4a83-a928-e61164930b0a" name="Changes" comment="добавление scenarios_booking2.py">
+    <list default="true" id="923271c9-1ecb-4a83-a928-e61164930b0a" name="Changes" comment="добавлены тесты проверки раздела PING">
       <change afterPath="$PROJECT_DIR$/../GraphQL_API/.idea/GraphQL_API.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/bad_api_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/api/bad_auth_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scenarios/scenario_booking3.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scenarios/scenarios_booking.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/потом_удалить.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data_models/project_data_2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scenarios/scenario_auth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_invalid_checks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_valid_checks.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../Задачи из п.5 раздела 2.2/MyXpeHb2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/PycharmProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/PycharmProjects.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
@@ -19,18 +18,23 @@
       <change beforePath="$PROJECT_DIR$/../PythonProject" beforeDir="false" afterPath="$PROJECT_DIR$/../PythonProject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_scenario_auth.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/auth_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auth_client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/health_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/health_check.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/enums/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/bad_api_manager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/bad_auth_client.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_models/project_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_models/project_data.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/enums/constant_of_headers.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/enums/constant_of_headers.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/scenarios/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/scenarios/scenarios_items.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scenarios/scenarios_booking2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/scenarios/scenarios_booking2.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/project_check_data_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/project_check_data_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/project_resp_data_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/project_resp_data_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/потом_удалить.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/потом_удалить.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_4_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_4_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_4_2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_create_and_delete.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_scenario_check.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_scenario_check.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачи из п.5 раздела 2.2/MyXpeHb.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачи из п.5 раздела 2.2/MyXpeHb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,6 +51,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -68,33 +73,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.Python tests for test_create_and_delete.TestBookings.executor": "Run",
-    "Python tests.Python tests for test_create_and_delete.TestBookings.test_create_booking.executor": "Run",
-    "Python tests.Python tests in потом_удалить.py.executor": "Run",
-    "Python tests.pytest in bin.executor": "Run",
-    "Python.api_manager.executor": "Run",
-    "Python.auth_client.executor": "Run",
-    "Python.bad_api_manager.executor": "Debug",
-    "Python.bad_auth_client.executor": "Run",
-    "Python.conftest.executor": "Debug",
-    "Python.health_check.executor": "Run",
-    "Python.scenario_booking3.executor": "Run",
-    "Python.scenarios.executor": "Run",
-    "Python.scenarios_booking2.executor": "Run",
-    "Python.потом_удалить.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ShowUsagesActions.previewPropertyKey": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/user/PycharmProjects/PythonProject1/src/api",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Python"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for test_create_and_delete.TestBookings.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_create_and_delete.TestBookings.test_create_booking.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_scenario_check.TestPingScenario.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_scenario_check.TestPingScenario.test_right_ping.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_create_and_delete.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_scenario_check.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in потом_удалить.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in bin.executor&quot;: &quot;Run&quot;,
+    &quot;Python.api_manager.executor&quot;: &quot;Run&quot;,
+    &quot;Python.auth_client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.bad_api_manager.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.bad_auth_client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.conftest.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.health_check.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.project_check_data_validator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.project_data_2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.project_resp_data_validator.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scenario_auth.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scenario_booking3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scenario_ping.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scenarios.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scenarios_booking2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.потом_удалить.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;version2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/PycharmProjects/PythonProject1/src/data_models&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;promo.database&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\user\PycharmProjects\PythonProject1\src\data_models" />
+      <recent name="C:\Users\user\PycharmProjects\PythonProject1\tests" />
       <recent name="C:\Users\user\PycharmProjects\PythonProject1\src\api" />
       <recent name="C:\Users\user\PycharmProjects\PythonProject1\src\enums" />
       <recent name="C:\Users\user\PycharmProjects\PythonProject1" />
@@ -105,7 +121,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="bad_api_manager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="api_manager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject1" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -118,7 +134,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/api/bad_api_manager.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/api/api_manager.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -127,7 +143,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="health_check" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="project_data_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject1" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -136,11 +152,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/api" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/data_models" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/api/health_check.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/data_models/project_data_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -149,7 +165,29 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="scenario_booking3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="project_resp_data_validator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject1" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/utils/project_resp_data_validator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scenario_auth" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject1" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -162,7 +200,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/scenarios/scenario_booking3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/scenarios/scenario_auth.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -171,29 +209,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="scenarios_booking2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PythonProject1" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src/scenarios" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/scenarios/scenarios_booking2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Python tests for test_create_and_delete.TestBookings" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_scenario_check.TestPingScenario.test_right_ping" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="PythonProject1" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -204,7 +220,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_create_and_delete.TestBookings&quot;" />
+      <option name="_new_target" value="&quot;test_scenario_check.TestPingScenario.test_right_ping&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
@@ -230,20 +246,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.health_check" />
-      <item itemvalue="Python.scenario_booking3" />
-      <item itemvalue="Python.bad_api_manager" />
-      <item itemvalue="Python.scenarios_booking2" />
+      <item itemvalue="Python.api_manager" />
+      <item itemvalue="Python.project_data_2" />
+      <item itemvalue="Python.project_resp_data_validator" />
+      <item itemvalue="Python.scenario_auth" />
       <item itemvalue="Python tests.pytest in bin" />
-      <item itemvalue="Python tests.Python tests for test_create_and_delete.TestBookings" />
+      <item itemvalue="Python tests.Python tests for test_scenario_check.TestPingScenario.test_right_ping" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.scenario_booking3" />
-        <item itemvalue="Python.health_check" />
-        <item itemvalue="Python.bad_api_manager" />
-        <item itemvalue="Python.scenarios_booking2" />
-        <item itemvalue="Python tests.Python tests for test_create_and_delete.TestBookings" />
+        <item itemvalue="Python.api_manager" />
+        <item itemvalue="Python.project_data_2" />
+        <item itemvalue="Python.project_resp_data_validator" />
+        <item itemvalue="Python.scenario_auth" />
+        <item itemvalue="Python tests.Python tests for test_scenario_check.TestPingScenario.test_right_ping" />
       </list>
     </recent_temporary>
   </component>
@@ -326,15 +342,70 @@
       <option name="project" value="LOCAL" />
       <updated>1756028979342</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="добавлены тесты проверки раздела PING">
+      <option name="closed" value="true" />
+      <created>1757937642981</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1757937642981</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="version2" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="version2" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -349,6 +420,7 @@
     <MESSAGE value="правка кода в api_manager, константах и сценариях" />
     <MESSAGE value="правка кода в api_manager.py" />
     <MESSAGE value="добавление scenarios_booking2.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавление scenarios_booking2.py" />
+    <MESSAGE value="добавлены тесты проверки раздела PING" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлены тесты проверки раздела PING" />
   </component>
 </project>

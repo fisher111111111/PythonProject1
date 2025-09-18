@@ -6,9 +6,23 @@ import os
 load_dotenv()
 
 class AuthApiClient:
-    def __init__(self, auth_token):
-        self.auth_token = auth_token
+    def __init__(self, auth_session):
+        self.auth_session = auth_session
         self.base_url = ConstURL.BASE_URL.value
+        self.auth = ConstURL.AUTH_ENDPOINT.value
+
+    # def make_auth_data(self):
+    #     """Создаем и возвращаем данные для переиспользования """
+    #     return {
+    #         "username": os.getenv("VALID_USERNAME"),
+    #         "password": os.getenv("VALID_PASSWORD")
+    #     }
+#
+# auth_session = requests.Session()
+# hc1 = AuthApiClient(auth_session)
+# result1 = hc1.make_auth_data()
+# print(result1)
+
 
     def create_auth_client(self):
         """Отправляет запрос на создание токена аутентификации."""
@@ -16,35 +30,24 @@ class AuthApiClient:
             "username": os.getenv("VALID_USERNAME"),
             "password": os.getenv("VALID_PASSWORD")
         }
-        response = self.auth_token.post(f"{self.base_url}/auth", json=auth_data)
-        if response.status_code not in (200, 201):
-            response.raise_for_status()
-        print(response.status_code)
-        return response.json()['token'], auth_data
+        response = self.auth_session.post(f"{self.base_url}/{self.auth}", json=auth_data)
+        return response
 
-auth_token = requests.Session()
-hc1 = AuthApiClient(auth_token)
-token, auth_data = hc1.create_auth_client()
-print(token, auth_data)
-#
+# auth_session = requests.Session()
+# hc1 = AuthApiClient(auth_session)
 # result1 = hc1.create_auth_client()
-# print (result1)
+# print(result1)
 
-#     def non_create_auth_client(self):
-#         '''
-#         Отправляет запрос на создание токена аутентификации.
-#         '''
-#         non_auth_data = {
-#             "username": os.getenv("INVALID_USERNAME"),
-#             "password": os.getenv("INVALID_PASSWORD")
-#         }
-#         response = self.auth_token.post(f"{self.base_url}/auth", json=non_auth_data)
-#         if response.status_code not in (200, 201):
-#             response.raise_for_status()
-#         print(response.status_code)
-#         return response.json()['reason']
-#
-# # auth_token = requests.Session()
-# # hc2 = AuthApiClient(auth_token)
-# # result2 = hc2.non_create_auth_client()
-# # print(result2)
+    def non_auth_client(self):
+        """Отправляет запрос на создание токена аутентификации."""
+        non_auth_data = {
+            "username": os.getenv("INVALID_USERNAME"),
+            "password": os.getenv("INVALID_PASSWORD")
+        }
+        response = self.auth_session.post(f"{self.base_url}/{self.auth}",json=non_auth_data)
+        return response
+
+# auth_session = requests.Session()
+# hc2 = AuthApiClient(auth_session)
+# result2 = hc2.non_auth_client()
+# print(result2,result2.text)
