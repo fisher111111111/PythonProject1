@@ -1,8 +1,8 @@
 from src.enums.constant_of_url import ConstURL
 from src.enums.constant_of_headers import ConstHeaders
 from src.data_models.project_data_2 import BookingAuthData
+from src.data_models.project_data_2 import BookingRequestData
 import requests
-from conftest import booking_data, upd_booking_data, patch_booking_data, make_auth_data
 
 class BookingApiClient:
     def __init__(self, booking_session):
@@ -10,39 +10,42 @@ class BookingApiClient:
         self.base_url = ConstURL.BASE_URL.value
         self.booking = ConstURL.BOOKING_ENDPOINT.value
         self.headers = ConstHeaders.HEADERS.value
+        self.content_type = ConstHeaders.CONTENT_TYPE.value
+        self.accept_type = ConstHeaders.ACCEPT.value
         self.auth_data = BookingAuthData
 
-    def create_booking(self, booking_data):
+    def create_booking(self):
         '''  Отправляет запрос на создание букинга. '''
+        booking_data = BookingRequestData.booking_data()
         response = self.booking_session.post(f"{self.base_url}{self.booking}",
                                           json=booking_data)
         if response.status_code not in (200, 201):
             response.raise_for_status()
         response_data = response.json()
-        print("Create_booking", response.json()) # Раскомментить для проверки содержимого в консоли!
         return response_data
-
-if __name__ == "__main__":
-    booking_session = requests.Session()
-    client = BookingApiClient(booking_session)
-    client.create_booking(booking_data())
-
-    # def get_booking(self, bookingid):
-    #     '''
-    #     Отправляет запрос на получение ID конкретного букинга
-    #     '''
-    #     response = self.booking_session.get(f"{self.base_url}{self.booking}/{bookingid}")
-    #     if response.status_code != 200:
-    #         response.raise_for_status()
-    #     json_data = response.json()
-    #     print(bookingid)
-    #     print(json_data)
-    #     return json_data
 
 # if __name__ == "__main__":
 #     booking_session = requests.Session()
 #     client = BookingApiClient(booking_session)
-#     client.get_booking(bookingid)
+#     client.create_booking()
+#     print(client.create_booking())
+
+    def get_booking(self, bookingid):
+        '''
+        Отправляет запрос на получение ID конкретного букинга
+        '''
+        response = self.booking_session.get(f"{self.base_url}{self.booking}/{bookingid}")
+        if response.status_code != 200:
+            response.raise_for_status()
+        json_data = response.json()
+        print(bookingid)
+        print(json_data)
+        return json_data
+
+if __name__ == "__main__":
+    booking_session = requests.Session()
+    client = BookingApiClient(booking_session)
+    # client.get_booking(bookingid)
     # print(f"Получаем тело созданного ID {bookingid}")
 #
 #     def update_booking(self, bookingid, upd_booking_data):
