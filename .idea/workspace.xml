@@ -4,7 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="923271c9-1ecb-4a83-a928-e61164930b0a" name="Changes" comment="добавление scenarios_booking2.py" />
+    <list default="true" id="923271c9-1ecb-4a83-a928-e61164930b0a" name="Changes" comment="сохранение изменений в ветке">
+      <change afterPath="$PROJECT_DIR$/../GraphQL_API/.idea/GraphQL_API.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject2/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject2/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject2/.idea/PythonProject2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject2/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject2/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject2/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject2/conftest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject2/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject2/src/data_models/project_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PythonProject2/src/enums/constant.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Задачи из п.5 раздела 2.2/MyXpeHb2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/PycharmProjects.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/PycharmProjects.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../GraphQL_API_DB/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphQL_API_DB/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PythonProject" beforeDir="false" afterPath="$PROJECT_DIR$/../PythonProject" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/auth_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/auth_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data_models/project_data_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_models/project_data_2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/project_resp_data_validator.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/потом_удалить.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/потом_удалить.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Задачи из п.5 раздела 2.2/MyXpeHb.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачи из п.5 раздела 2.2/MyXpeHb.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -46,32 +74,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python tests.Python tests for test_create_and_delete.TestBookings.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_create_and_delete.TestBookings.test_create_booking.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in потом_удалить.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.pytest in bin.executor&quot;: &quot;Run&quot;,
-    &quot;Python.api_manager.executor&quot;: &quot;Run&quot;,
-    &quot;Python.auth_client.executor&quot;: &quot;Run&quot;,
-    &quot;Python.bad_api_manager.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.bad_auth_client.executor&quot;: &quot;Run&quot;,
-    &quot;Python.conftest.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.health_check.executor&quot;: &quot;Run&quot;,
-    &quot;Python.project_data_2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.scenario_booking3.executor&quot;: &quot;Run&quot;,
-    &quot;Python.scenarios.executor&quot;: &quot;Run&quot;,
-    &quot;Python.scenarios_booking2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.потом_удалить.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;version2&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/PycharmProjects/PythonProject1&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Python&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests for test_create_and_delete.TestBookings.executor": "Run",
+    "Python tests.Python tests for test_create_and_delete.TestBookings.test_create_booking.executor": "Run",
+    "Python tests.Python tests in потом_удалить.py.executor": "Run",
+    "Python tests.pytest in bin.executor": "Run",
+    "Python.api_manager.executor": "Run",
+    "Python.auth_client.executor": "Run",
+    "Python.bad_api_manager.executor": "Debug",
+    "Python.bad_auth_client.executor": "Run",
+    "Python.conftest.executor": "Run",
+    "Python.health_check.executor": "Run",
+    "Python.project_check_data_validator.executor": "Run",
+    "Python.project_data_2.executor": "Run",
+    "Python.scenario_booking3.executor": "Run",
+    "Python.scenarios.executor": "Run",
+    "Python.scenarios_booking2.executor": "Run",
+    "Python.потом_удалить.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "ShowUsagesActions.previewPropertyKey": "true",
+    "git-widget-placeholder": "version2",
+    "last_opened_file_path": "C:/Users/user/PycharmProjects/PythonProject1",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Python"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\PycharmProjects\PythonProject1\src\api" />
@@ -83,8 +112,8 @@
       <recent name="C:\Users\user\PycharmProjects\PythonProject1\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.api_manager">
-    <configuration name="api_manager" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager">
+    <configuration name="auth_client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject1" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -97,7 +126,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/api/api_manager.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/api/auth_client.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -209,7 +238,7 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.api_manager" />
+      <item itemvalue="Python.auth_client" />
       <item itemvalue="Python.project_data_2" />
       <item itemvalue="Python.project_resp_data_validator" />
       <item itemvalue="Python.scenario_auth" />
@@ -218,11 +247,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.auth_client" />
         <item itemvalue="Python.project_data_2" />
         <item itemvalue="Python tests.Python tests for test_scenario_check.TestPingScenario.test_right_ping" />
         <item itemvalue="Python.scenario_auth" />
         <item itemvalue="Python.project_resp_data_validator" />
-        <item itemvalue="Python.api_manager" />
       </list>
     </recent_temporary>
   </component>
@@ -305,7 +334,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756028979342</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="сохранение изменений в ветке">
+      <option name="closed" value="true" />
+      <created>1758386017044</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1758386017044</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -350,6 +387,7 @@
     <MESSAGE value="правка кода в api_manager, константах и сценариях" />
     <MESSAGE value="правка кода в api_manager.py" />
     <MESSAGE value="добавление scenarios_booking2.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавление scenarios_booking2.py" />
+    <MESSAGE value="сохранение изменений в ветке" />
+    <option name="LAST_COMMIT_MESSAGE" value="сохранение изменений в ветке" />
   </component>
 </project>

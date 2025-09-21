@@ -61,7 +61,7 @@ def booking_data():
     }
 
 # Фикстура генерации отправляемых данных
-@pytest.fixture(scope="session")
+# @pytest.fixture(scope="session")
 def wrong_booking_data():
     """Неправильные данные букинга"""
     return {
@@ -103,7 +103,8 @@ def patch_booking_data():
 
 
 # Фикстура для получения bookingid
-@pytest.fixture(scope="session")
+# @pytest.fixture(scope="session")
+
 def booking_id(booking_data):
     """Получение тела ответа на POST запрос """
     response = requests.post(f"{BASE_URL}/booking", json=booking_data)
@@ -113,8 +114,8 @@ def booking_id(booking_data):
     # print(response.json())
     return bookingid
 
-# bookingid = booking_id(booking_data())
-# print(bookingid)
+bookingid = booking_id(booking_data())
+print(bookingid)
 
 # Фикстураа авторизации
 @pytest.fixture(scope="session")

@@ -30,21 +30,25 @@
 #     assert input_value * 2 == expected
 # pytest.mark.parametrize.mark.name.find()
 
-class Person:
-    def __init__(self, name, age):
-        self._name = name       # Защищённое поле
-        self.__age = age        # Приватное поле
+import re
 
-    def get_age(self):
-        return self.__age       # Геттер для возраста
+# Простая регулярка: есть символ @ и хотя бы одна точка после него
+EMAIL_RE = re.compile(r'^[^@\s]+@[^@\s]+\.[^@\s]+$')
+qq = re.finditer
+def is_valid_email(email: str) -> bool:
+    """Возвращает True, если email соответствует шаблону (есть @ и точка после него)."""
+    return bool(EMAIL_RE.match(email))
 
-    def set_age(self, new_age):
-        if new_age > 0:
-            self.__age = new_age   # Сеттер проверяет условие перед изменением значения
-        else:
-            raise ValueError("Возраст должен быть положительным")
+# Примеры
+tests = [
+    "user@example.com",
+    "user.name@sub.domain.ru",
+    "user@localhost",      # неверно — нет точки в домене
+    "user@@example.com",   # неверно — два @
+    "user example@com",    # неверно — пробелы
+    "user@.com",           # неверно — пустая часть домена перед точкой
+    "1@domen.com"
+]
 
-p = Person("Иван", 30)
-print(p.get_age())           # Получаем возраст через геттер
-p.set_age(35)                # Устанавливаем новый возраст через сеттер
-print(p.get_age())
+for t in tests:
+    print(f"{t:30} -> {is_valid_email(t)}")

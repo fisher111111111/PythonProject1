@@ -4,6 +4,9 @@ from typing import Optional
 import random
 from faker import Faker
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 fake = Faker()
 
@@ -14,6 +17,59 @@ class BookingAuthData:
             "username": os.getenv("VALID_USERNAME"),
             "password": os.getenv("VALID_PASSWORD")
         }
+
+# if __name__ == "__main__":  # Проверка содержания отправляемого тела запроса
+#     auth = BookingAuthData()
+#     auth_data = auth.make_auth_data()
+#     print(auth_data)
+
+
+class GenerateDates:
+    def generate_booking_dates(self):
+        """Генерация случайных дат checkin и checkout"""
+        start_date = fake.date_between(start_date="today", end_date="+1m")
+        end_date = start_date + timedelta(days=random.randint(1, 10))
+        return {
+            'checkin': start_date.strftime('%Y-%m-%d'),
+            'checkout': end_date.strftime('%Y-%m-%d')
+        }
+
+    def booking_data(self):
+        """Создание данных букинга"""
+        self.dates = self.generate_booking_dates()
+        return {
+        "firstname": fake.first_name(),
+        "lastname": fake.last_name(),
+        "totalprice": fake.random_int(min=100, max=10000),
+        "depositpaid": True,
+        "bookingdates": self.dates,
+        "additionalneeds": "Breakfast"
+    }
+
+# if __name__ == "__main__":  # Проверка содержания отправляемого тела запроса
+#     req = GenerateDates()
+#     request_data = req.booking_data()
+#     print(request_data)
+
+    def upd_booking_data(self):
+        """Данные для полного изменения букинга"""
+        self.dates = self.generate_booking_dates()
+        return {
+            "firstname": "Updater",
+            "lastname": "Updatenberg",
+            "totalprice": fake.random_int(min=100, max=10000),
+            "depositpaid": False,
+            "bookingdates": self.dates,
+            "additionalneeds": "Dinner"
+        }
+
+    def patch_booking_data(self):
+        """Данные для частичного изменения букинга"""
+        return {
+            "firstname": "Patcheson",
+            "lastname": "Patchey"
+        }
+
 
 class BookingCheckDates(BaseModel):
     checkin: str
@@ -26,55 +82,3 @@ class BookingResponseData(BaseModel):
     depositpaid: bool
     bookingdates: BookingCheckDates
     additionalneeds: Optional[str] = None
-
-class BookingRequestCheckDates(BaseModel):
-    checkin: str
-    checkout: str
-
-class BookingRequestData(BaseModel):
-    firstname: str
-    lastname: str
-    totalprice: int
-    depositpaid: bool
-    bookingdates: BookingRequestCheckDates
-    additionalneeds: Optional[str] = None
-
-    @staticmethod
-    def generate_booking_dates():
-        """Генерация случайных дат checkin и checkout"""
-        start_date = fake.date_between(start_date="today", end_date="+1m")
-        end_date = start_date + timedelta(days=random.randint(1, 10))
-        return {
-            'checkin': start_date.strftime('%Y-%m-%d'),
-            'checkout': end_date.strftime('%Y-%m-%d')
-        }
-
-    @classmethod
-    def booking_data(cls):
-        """Создание данных букинга"""
-        # first_name = fake.first_name()
-        # last_name = fake.last_name()
-        # total_price = fake.random_int(min=100, max=10000)
-        # deposit_paid = True
-        # additional_needs = "Breakfast"
-        # generated_dates = cls.generate_booking_dates()
-        # booking_request_check_dates = BookingRequestCheckDates(**generated_dates)
-        # # Создание экземпляра класса с правильными данными
-        # instance = cls(firstname=first_name, lastname=last_name, totalprice=total_price, depositpaid=deposit_paid, bookingdates=booking_request_check_dates, additionalneeds=additional_needs)
-        # # Возвращаем JSON представление данных
-        # return                  instance.model_dump_json(indent=4)
-        return {
-        "firstname": fake.first_name(),
-        "lastname": fake.last_name(),
-        "totalprice": fake.random_int(min=100, max=10000),
-        "depositpaid": True,
-        "bookingdates": {
-            "checkin": "2024-04-05",
-            "checkout": "2024-04-08"
-        },
-        "additionalneeds": "Breakfast"
-    }
-
-if __name__ == "__main__":  # Проверочный пример
-    request_data = BookingRequestData.booking_data()
-    print(request_data)  # Выведем JSON-данные
