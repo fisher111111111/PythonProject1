@@ -1,6 +1,6 @@
 from src.enums.constant_of_url import ConstURL
 from src.enums.constant_of_headers import ConstHeaders
-from src.data_models.project_data_2 import BookingAuthData, GenerateDates
+from src.data_models.project_data import BookingAuthData, GenerateDates
 import requests
 from requests.auth import HTTPBasicAuth
 
