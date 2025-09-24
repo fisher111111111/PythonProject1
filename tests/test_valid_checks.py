@@ -8,8 +8,8 @@ from src.scenarios.scenarios_booking2 import BookingScenarios
 class TestBookings:
 
     BASE_URL = ConstURL.BASE_URL.value
-    def test_siute (self, api_scenarios: BookingScenarios):
-        self.api_scenarios = api_scenarios
+    # def test_suite (self, api_scenarios: BookingScenarios):
+    #     self.api_scenarios = api_scenarios
 
     def test_create_del_check_booking(self, auth_token, booking_data):
         # Create
@@ -41,7 +41,7 @@ class TestBookings:
 
         # Get + Валидировать и данные, и схему
         response = auth_token.get(f"{TestBookings.BASE_URL}/booking/{booking_id}")
-        validate_response_data(response, model=BookingResponseData, expected_data=upd_booking_data)
+        validate_dates(response, model=BookingResponseData, expected_data=upd_booking_data)
 
         # Delete
         delete = auth_token.delete(f"{TestBookings.BASE_URL}/booking/{booking_id}")
@@ -67,7 +67,7 @@ class TestBookings:
 
         # Get + Валидировать и данные, и схему
         response = auth_token.get(f"{TestBookings.BASE_URL}/booking/{booking_id}")
-        validate_response_data(response, model=BookingResponseData, expected_data=checking_data)
+        validate_dates(response, model=BookingResponseData, expected_data=checking_data)
 
         # Delete
         delete = auth_token.delete(f"{TestBookings.BASE_URL}/booking/{booking_id}")

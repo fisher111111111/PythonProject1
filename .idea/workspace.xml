@@ -25,7 +25,8 @@
       <change beforePath="$PROJECT_DIR$/../GraphQL_API_DB/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphQL_API_DB/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PythonProject" beforeDir="false" afterPath="$PROJECT_DIR$/../PythonProject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/project_check_data_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/project_data_validator.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_valid_checks.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_valid_checks.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачи из п.5 раздела 2.2/MyXpeHb.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачи из п.5 раздела 2.2/MyXpeHb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,6 +75,7 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;Python tests.Python tests for test_create_and_delete.TestBookings.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests for test_create_and_delete.TestBookings.test_create_booking.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_valid_checks.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.Python tests in потом_удалить.py.executor&quot;: &quot;Run&quot;,
     &quot;Python tests.pytest in bin.executor&quot;: &quot;Run&quot;,
     &quot;Python.api_manager.executor&quot;: &quot;Run&quot;,
@@ -110,7 +112,7 @@
       <recent name="C:\Users\user\PycharmProjects\PythonProject1\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.project_data">
     <configuration name="auth_client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject1" />
       <option name="ENV_FILES" value="" />
@@ -133,7 +135,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="project_data_2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="project_data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject1" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -146,7 +148,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/data_models/project_data_2.py" />
+      <option name="SCRIPT_NAME" value="C:\Users\user\PycharmProjects\PythonProject1\src\data_models\project_data.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -236,8 +238,8 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.project_data" />
       <item itemvalue="Python.auth_client" />
-      <item itemvalue="Python.project_data_2" />
       <item itemvalue="Python.project_resp_data_validator" />
       <item itemvalue="Python.scenario_auth" />
       <item itemvalue="Python tests.pytest in bin" />
@@ -248,7 +250,6 @@
         <item itemvalue="Python tests.Python tests for test_scenario_check.TestPingScenario.test_right_ping" />
         <item itemvalue="Python.scenario_auth" />
         <item itemvalue="Python.project_resp_data_validator" />
-        <item itemvalue="Python.project_data_2" />
         <item itemvalue="Python.auth_client" />
       </list>
     </recent_temporary>
@@ -340,7 +341,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758386017044</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="сохранение изменений в ветке">
+      <option name="closed" value="true" />
+      <created>1758620946129</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1758620946130</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
