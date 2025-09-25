@@ -1,7 +1,7 @@
 import pytest
 from src.enums.constant_of_url import ConstURL
 from src.data_models.project_data import BookingResponseData
-from src.utils.project_resp_data_validator import validate_response_data
+from src.utils.project_data_validator import validate_dates
 
 class TestBookings:
 
@@ -15,7 +15,7 @@ class TestBookings:
 
         # Get + Валидировать и данные, и схему
         response = auth_token.get(f"{TestBookings.BASE_URL}/booking/{booking_id}")
-        validate_response_data (response, model=BookingResponseData, expected_data=booking_data)
+        validate_dates (response, model=BookingResponseData, expected_data=booking_data)
 
         # Delete
         delete = auth_token.delete(f"{TestBookings.BASE_URL}/booking/{booking_id}")
@@ -37,7 +37,7 @@ class TestBookings:
 
         # Get + Валидировать и данные, и схему
         response = auth_token.get(f"{TestBookings.BASE_URL}/booking/{booking_id}")
-        validate_response_data(response, model=BookingResponseData, expected_data=upd_booking_data)
+        validate_dates(response, model=BookingResponseData, expected_data=upd_booking_data)
 
         # Delete
         delete = auth_token.delete(f"{TestBookings.BASE_URL}/booking/{booking_id}")
@@ -63,7 +63,7 @@ class TestBookings:
 
         # Get + Валидировать и данные, и схему
         response = auth_token.get(f"{TestBookings.BASE_URL}/booking/{booking_id}")
-        validate_response_data(response, model=BookingResponseData, expected_data=checking_data)
+        validate_dates(response, model=BookingResponseData, expected_data=checking_data)
 
         # Delete
         delete = auth_token.delete(f"{TestBookings.BASE_URL}/booking/{booking_id}")

@@ -5,9 +5,6 @@ from requests import Response
 from typing import Type, List, Optional
 from src.data_models.project_data_all_bookings import Bookings
 
-class Bookings(BaseModel):
-    bookingid: int
-
 def validate_booking_list(
     response: Response,
     model: Type[Bookings],
@@ -22,65 +19,35 @@ def validate_booking_list(
     # Попытка парсинга JSON
     try:
         data = response.json()
+        if expected_data:
+            actual_ids = {booking['bookingid'] for booking in data}
+            expected_ids = {booking['bookingid'] for booking in expected_data}
+            if not expected_ids.issubset(actual_ids):
+                pytest.fail(f"В ответе отсутствуют ожидаемые bookingid: {expected_ids - actual_ids}")
     except Exception as e:
         pytest.fail(f"Ошибка парсинга JSON: {e}\nResponse: {response.text}")
 
     # Проверка, что данные являются списком
     if not isinstance(data, list):
-        pytest.fail(f"Ожидался список, получен: {type(data).__name__}")
+        pytest.fail(f"Ожидаемый список не получен. Получено: {type(data.text)}")
 
     # Валидация каждого объекта в списке
     parsed_bookings = []
-    for item in data:
+    for booking in data:
         try:
-            parsed = model(**item)
+            parsed = model(**booking)
             parsed_bookings.append(parsed)
         except ValidationError as e:
-            pytest.fail(f"Pydantic валидация не прошла для элемента {item}:\n{e}")
+            pytest.fail(f"Pydantic валидация не прошла для элемента {booking}:\n{e}")
 
-    # Сравнение с ожидаемыми данными
+    # Сравнение наличия созданного букинга в общем списке букингов
     if expected_data:
         expected_models = [model(**expected_item) for expected_item in expected_data]
-        if [booking.model_dump(exclude_unset=True) for booking in parsed_bookings] != [expected_booking.model_dump(exclude_unset=True) for expected_booking in expected_models]:
+        if not (expected_model in parsed_bookings for expected_model in expected_models):
             pytest.fail(
                 f"Данные ответа не совпадают с ожидаемыми:\n"
-                f"Expected: {[expected_booking.model_dump() for expected_booking in expected_models]}\n"
-                f"Actual:   {[booking.model_dump() for booking in parsed_bookings]}"
+                f"Expected: {[expected_models]}\n"
+                f"Actual:   {[parsed_bookings]}"
             )
 
     return parsed_bookings
-
-
-
-
-def validate_dates(
-    response: Response,
-    model: Type[Bookings],
-    expected_status: int = 200,
-    expected_data: dict | None = None
-) -> BaseModel:
-
-    if response.status_code != expected_status:
-        pytest.fail(f"Expected status {expected_status}, got {response.status_code}: {response.text}")
-
-    try:
-        data = response.json()
-    except Exception as e:
-        pytest.fail(f"Ошибка парсинга JSON: {e}\nResponse: {response.text}")
-
-    try:
-        parsed = model(**data)
-    except ValidationError as e:
-        pytest.fail(f"Pydantic валидация не прошла:\n{e}")
-
-    if expected_data:
-        expected_model = model(**expected_data)
-        if parsed.model_dump(exclude_unset=True) != expected_model.model_dump(exclude_unset=True):
-            pytest.fail(
-                f"Данные ответа не совпадают с ожидаемыми:\n"
-                f"Expected: {expected_model.model_dump()}\n"
-                f"Actual:   {parsed.model_dump()}"
-            )
-
-    print(parsed)
-    return parsed

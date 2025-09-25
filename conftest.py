@@ -96,16 +96,6 @@ def patch_booking_data():
         "lastname": "Patchey"
         }
 
-
-# Фикстура для получения bookingid
-@pytest.fixture(scope="session")
-def got_booking_id(booking_data):
-    """Получение тела ответа на POST запрос """
-    response = requests.post(f"{BASE_URL}/booking", json=booking_data)
-    assert response.status_code == 200
-    bookingid = response.json()["bookingid"]
-    return bookingid
-
 # Фикстураа авторизации
 @pytest.fixture(scope="session")
 def make_auth_data():
@@ -141,3 +131,17 @@ def auth_token():
     booking_token = response.json()['token']
     token_session.headers.update({"Cookie": f'token={booking_token}'})
     return token_session
+
+# Фикстура для получения bookingid
+@pytest.fixture(scope="session")
+def get_booking_id(booking_data):
+    """Получение тела ответа на POST запрос """
+    response = requests.post(f"{BASE_URL}/booking", json=booking_data)
+    assert response.status_code == 200
+    bookingid = response.json()["bookingid"]
+    return bookingid
+
+# Фикстура создания bookingid для общего списка
+@pytest.fixture(scope="session")
+def bookingids (get_booking_id):
+    return [{ "bookingid": get_booking_id}]

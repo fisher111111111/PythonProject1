@@ -42,7 +42,7 @@ class BookingApiClient:
             response.raise_for_status()
         json_data = response.json()
         return json_data
-
+#
 # if __name__ == "__main__":
 #     booking_session = requests.Session()
 #     client = BookingApiClient(booking_session)
@@ -55,7 +55,7 @@ class BookingApiClient:
         '''
         Отправляет запрос на полное обновление букинга
         '''
-        # auth_data = make_auth_data()  - исправить
+
         response = self.booking_session.put(
             f"{self.base_url}{self.booking}/{booking_id}", json=upd_booking_data,
                                                            headers=self.headers,
@@ -63,16 +63,17 @@ class BookingApiClient:
         if response.status_code != 200:
             response.raise_for_status()
         return response.json()
-#
+
 # if __name__ == "__main__":
 #     booking_session = requests.Session()
 #     client = BookingApiClient(booking_session)
 #     get_id = client.create_booking()
+#     print(f"Полчаем тело созданного ID \n {get_id}")
 #     booking_id = get_id['bookingid']
 #     updater = GenerateDates()
 #     update_data = updater.upd_booking_data()
 #     booking_json = client.update_booking(booking_id, update_data)
-#     print(f"Получаем тело созданного ID {booking_id} \n {booking_json}")
+#     print(f"Получаем тело обновленного ID {booking_id} \n {booking_json}")
 
     def patch_booking(self,booking_id, patch_booking_data):
         '''
@@ -89,11 +90,13 @@ class BookingApiClient:
 #     booking_session = requests.Session()
 #     client = BookingApiClient(booking_session)
 #     get_id = client.create_booking()
+#     print(f"Создан букинг {get_id}")
 #     booking_id = get_id['bookingid']
 #     updater = GenerateDates()
-#     update_data = updater.patch_booking_data()
-#     booking_json = client.patch_booking(booking_id, update_data)
-#     print(f"Получаем тело созданного ID {booking_id} \n {booking_json}")
+#     patch_data = updater.patch_booking_data()
+#     print(f"Данные для частичного изменения созданного букинга \n {patch_data}")
+#     booking_json = client.patch_booking(booking_id, patch_data)
+#     print(f"Получаем тело измененного ID {booking_id} \n {booking_json}")
 
     def get_all_bookings(self):
         '''
@@ -122,12 +125,12 @@ class BookingApiClient:
             response.raise_for_status()
         return response.status_code, response.text
 
-if __name__ == "__main__":
-    booking_session = requests.Session()
-    client = BookingApiClient(booking_session)
-    get_id = client.create_booking()
-    booking_id = get_id['bookingid']
-    deleter = GenerateDates()
-    deleter_data = deleter.patch_booking_data()
-    booking_text = client.delete_booking(booking_id)
-    print(f"Удаляем объект с ID {booking_id} \n и получаем результат{booking_text}")
+# if __name__ == "__main__":
+#     booking_session = requests.Session()
+#     client = BookingApiClient(booking_session)
+#     get_id = client.create_booking()
+#     booking_id = get_id['bookingid']
+#     deleter = GenerateDates()
+#     deleter_data = deleter.patch_booking_data()
+#     booking_text = client.delete_booking(booking_id)
+#     print(f"Удаляем объект с ID {booking_id} \n и получаем результат{booking_text}")

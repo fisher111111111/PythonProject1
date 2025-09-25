@@ -33,5 +33,4 @@ def validate_dates(
                 f"Actual:   {parsed.model_dump()}"
             )
 
-    print(parsed)
     return parsed

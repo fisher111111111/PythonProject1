@@ -1,15 +1,13 @@
-import pytest
 
 from src.enums.constant_of_url import ConstURL
 from src.data_models.project_data import BookingResponseData
+from src.data_models.project_data_all_bookings import Bookings
 from src.utils.project_data_validator import validate_dates
-from src.scenarios.scenarios_booking2 import BookingScenarios
+from src.utils.project_data_all_bookings_validator import validate_booking_list
 
 class TestBookings:
 
     BASE_URL = ConstURL.BASE_URL.value
-    # def test_suite (self, api_scenarios: BookingScenarios):
-    #     self.api_scenarios = api_scenarios
 
     def test_create_del_check_booking(self, auth_token, booking_data):
         # Create
@@ -35,9 +33,13 @@ class TestBookings:
         assert create.status_code == 200
         booking_id = create.json().get("bookingid")
 
+        # Преобразуем полученное тело Create для сравнения с телом Update
+        create_data = create.json().get('booking')
+
         #Update
         update = auth_token.put(f"{TestBookings.BASE_URL}/booking/{booking_id}", json=upd_booking_data)
         assert update.status_code == 200
+        assert update != create_data, f"Тело обновленного букинга не изменилось, что не ожидалось"
 
         # Get + Валидировать и данные, и схему
         response = auth_token.get(f"{TestBookings.BASE_URL}/booking/{booking_id}")
@@ -77,3 +79,16 @@ class TestBookings:
         check_delete = auth_token.get(f"{TestBookings.BASE_URL}/booking/{booking_id}")
         assert check_delete.status_code == 404, f"Букинг с ID {booking_id} не был удален"
 
+    def test_check_get_all_booking(self, auth_token, booking_data, bookingids):
+        # Create
+        create = auth_token.post(f"{TestBookings.BASE_URL}/booking", json=booking_data)
+        assert create.status_code == 200
+        booking_id = create.json().get("bookingid")
+
+        # Get_all + Валидировать и данные, и схему
+        response = auth_token.get(f"{TestBookings.BASE_URL}/booking")
+        validate_booking_list (response, model=Bookings, expected_data=bookingids)
+
+        # Delete
+        delete = auth_token.delete(f"{TestBookings.BASE_URL}/booking/{booking_id}")
+        assert delete.status_code == 201
