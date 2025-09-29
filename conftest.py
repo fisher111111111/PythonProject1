@@ -1,17 +1,13 @@
 import pytest
 import requests
-from faker import Faker
 from scenarios.scenario_auth import AuthScenario
 from src.api.auth_client import AuthApiClient
 from src.enums.constant_of_url import ConstURL
+from src.data_models.project_data import GenerateDates, BookingAuthData
 import time
 from src.scenarios.scenario_ping import PingScenario
 from src.api.health_check import HealthCheck
-from dotenv import load_dotenv
-import os
 
-load_dotenv()
-fake = Faker()
 BASE_URL = ConstURL.BASE_URL.value
 
 @pytest.fixture(scope="module")
@@ -43,99 +39,49 @@ def time_ping():
 def booking_data():
     """ Тестирование раздела Booking
     # Фикстура генерации отправляемых данных букинга """
-    return {
-        "firstname": fake.first_name(),
-        "lastname": fake.last_name(),
-        "totalprice": fake.random_int(min=100, max=10000),
-        "depositpaid": True,
-        "bookingdates": {
-            "checkin": "2024-04-05",
-            "checkout": "2024-04-08"
-        },
-        "additionalneeds": "Breakfast"
-    }
+    data_create = GenerateDates()
+    return data_create.booking_data()
 
 @pytest.fixture(scope="session")
 def wrong_booking_data():
     """ Тестирование раздела Booking
     Фикстура генерации отправляемых Неправильных данных букинга"""
-    return {
-        "firstname": None,
-        "lastname": None,
-        "totalprice": fake.random_int(min=100, max=10000),
-        "depositpaid": True,
-        "bookingdates": {
-            "checkin": "2024-04-05",
-            "checkout": "2024-04-08"
-        },
-        "additionalneeds": "Breakfast"
-    }
+    data_wrong_create = GenerateDates()
+    return data_wrong_create.wrong_booking_data()
 
 # Фикстура для изменённых отправляемых данных
 @pytest.fixture(scope="session")
 def upd_booking_data():
     """Тестирование раздела Booking
     Данные для полного изменения букинга"""
-    return {
-        "firstname": fake.first_name(),
-        "lastname": fake.last_name(),
-        "totalprice": fake.random_int(min=100, max=10000),
-        "depositpaid": False,
-        "bookingdates": {
-            "checkin": "2025-05-06",
-            "checkout": "2025-05-09"
-        },
-        "additionalneeds": "Dinner"
-    }
+    data_update = GenerateDates()
+    return data_update.upd_booking_data()
 
 @pytest.fixture(scope="session")
 def patch_booking_data():
     """ Тестирование раздела Booking
     Данные для частичного изменения букинга"""
-    return {
-        "namew": "Patcheson",
-        "name": "Patchey"
-        }
+    data_patch = GenerateDates()
+    return data_patch.patch_booking_data()
 
 @pytest.fixture(scope="session")
 def make_auth_data():
     """Правильные данные для авторизации"""
-    auth_data = os.getenv("VALID_USERNAME"), os.getenv("VALID_PASSWORD")
-
-    return auth_data
+    auth_data = BookingAuthData()
+    return auth_data.make_auth_data()
 
 @pytest.fixture(scope="session")
 def non_auth_data():
     """ Неправильные данные для авторизации"""
-    wrong_auth_data = {
-        "username": os.getenv("INVALID_USERNAME"),
-        "password": os.getenv("INVALID_PASSWORD")
-    }
-    return wrong_auth_data
+    wrong_auth_data = BookingAuthData()
+    return wrong_auth_data.non_auth_data()
 
 @pytest.fixture(scope="session")
 def auth_token():
     """ Тестирование раздела Booking
     Создание сессии с авторизацией"""
-    token_session = requests.Session()
-    auth_data = {
-        "username": os.getenv("VALID_USERNAME"),
-        "password": os.getenv("VALID_PASSWORD")
-    }
-    response = token_session.post(f"{BASE_URL}/auth", json=auth_data)
-    if response.status_code not in (200, 201):
-        response.raise_for_status()
-    token_session.auth = (os.getenv("VALID_USERNAME"), os.getenv("VALID_PASSWORD") )
-    booking_token = response.json()['token']
-    token_session.headers.update({"Cookie": f'token={booking_token}'})
-    return token_session
-
-@pytest.fixture(scope="session")
-def bookingids (get_booking_id):
-    """ Тестирование раздела Booking
-    Фикстура получения bookingid для общего списка букингов"""
-    return [{ "bookingid": get_booking_id}]
-
+    data_token = BookingAuthData()
+    return data_token.auth_token()
 
 """ Фикстуры для второго варианта тестов"""
 
@@ -147,6 +93,12 @@ def get_booking_id(booking_data):
     assert response.status_code == 200
     booking_id = response.json()["bookingid"]
     return booking_id
+
+@pytest.fixture(scope="session")
+def bookingids (get_booking_id):
+    """ Тестирование раздела Booking
+    Фикстура получения bookingid для общего списка букингов"""
+    return [{ "bookingid": get_booking_id}]
 
 @pytest.fixture(scope="session")
 def del_booking_id(get_booking_id, make_auth_data):
