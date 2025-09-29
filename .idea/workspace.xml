@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="923271c9-1ecb-4a83-a928-e61164930b0a" name="Changes" comment="обновление проекта">
+    <list default="true" id="923271c9-1ecb-4a83-a928-e61164930b0a" name="Changes" comment="обновление проекта итоговое">
       <change afterPath="$PROJECT_DIR$/../GraphQL_API/.idea/GraphQL_API.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../PythonProject2/.env" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../PythonProject2/.gitignore" afterDir="false" />
@@ -24,10 +24,6 @@
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../GraphQL_API_DB/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../GraphQL_API_DB/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PythonProject" beforeDir="false" afterPath="$PROJECT_DIR$/../PythonProject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data_models/project_data.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/data_models/project_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/111.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../Задачи из п.5 раздела 2.2/MyXpeHb.py" beforeDir="false" afterPath="$PROJECT_DIR$/../Задачи из п.5 раздела 2.2/MyXpeHb.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +123,7 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="pytest in tests" type="tests" factoryName="py.test" nameIsGenerated="true">
+    <configuration name="pytest in tests" type="tests" factoryName="py.test">
       <module name="PythonProject1" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -276,7 +272,23 @@
       <option name="project" value="LOCAL" />
       <updated>1759135819303</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="обновление проекта итоговое">
+      <option name="closed" value="true" />
+      <created>1759139797860</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1759139797860</updated>
+    </task>
+    <task id="LOCAL-00016" summary="обновление проекта итоговое">
+      <option name="closed" value="true" />
+      <created>1759139882760</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1759139882760</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -341,6 +353,7 @@
     <MESSAGE value="добавил модель и валидатор на all_bookings" />
     <MESSAGE value="обновление проекта перед написанием негативных тестов" />
     <MESSAGE value="обновление проекта" />
-    <option name="LAST_COMMIT_MESSAGE" value="обновление проекта" />
+    <MESSAGE value="обновление проекта итоговое" />
+    <option name="LAST_COMMIT_MESSAGE" value="обновление проекта итоговое" />
   </component>
 </project>
