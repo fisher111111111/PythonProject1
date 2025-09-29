@@ -17,7 +17,6 @@ https://restful-booker.herokuapp.com/apidoc/index.html
 ### Структура проекта
 
 ├── README.md            \
-├── constant.py          \
 ├── conftest.py          \
 ├── src/                
 │        ├── api.py    
@@ -35,7 +34,7 @@ https://restful-booker.herokuapp.com/apidoc/index.html
 
 ### Запуск автоматизированных тестов на Python 
 
-Для запуска тестов необходимо установить соответствующие библиотеки:
+Для запуска тестов необходимо установить соответствующие библиотеки и зависимостей:
 
 ```bash
 pip install -r requirements.txt
@@ -45,6 +44,8 @@ pip install -r requirements.txt
 ```bash
 pytest
 ```
+дописать про аллюр
+
 ### Авторы
 **Рыбальченко Алексей**
 ### Контакты

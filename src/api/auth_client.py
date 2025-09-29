@@ -1,5 +1,4 @@
 from src.enums.constant_of_url import ConstURL
-import requests
 from dotenv import load_dotenv
 import os
 
@@ -10,19 +9,6 @@ class AuthApiClient:
         self.auth_session = auth_session
         self.base_url = ConstURL.BASE_URL.value
         self.auth = ConstURL.AUTH_ENDPOINT.value
-
-    # def make_auth_data(self):
-    #     """Создаем и возвращаем данные для переиспользования """
-    #     return {
-    #         "username": os.getenv("VALID_USERNAME"),
-    #         "password": os.getenv("VALID_PASSWORD")
-    #     }
-#
-# auth_session = requests.Session()
-# hc1 = AuthApiClient(auth_session)
-# result1 = hc1.make_auth_data()
-# print(result1)
-
 
     def create_auth_client(self):
         """Отправляет запрос на создание токена аутентификации."""

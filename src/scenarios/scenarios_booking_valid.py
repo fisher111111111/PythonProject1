@@ -1,6 +1,5 @@
 
 import requests
-import json
 from src.api.api_manager import BookingApiClient
 from  src.data_models.project_data import GenerateDates
 
@@ -138,22 +137,24 @@ class BookingScenarios:
         '''
         # 1. Создать букинг
         create_book = self.api_client.create_booking()
+        print(create_book)
         booking_id = create_book.get("bookingid")
         print("Создан booking_id =", booking_id)
 
         #2. Частично изменить букинг
         ptch_booking_data = self.generate_dates.patch_booking_data()
         patched_booking = self.api_client.patch_booking(booking_id, ptch_booking_data)
+        print (patched_booking)
         final_patch_booking = {key: patched_booking[key] for key in ['firstname', 'lastname']}
         assert final_patch_booking == ptch_booking_data, f"Букинг частично не обновился."
         print(f"booking с ID {booking_id} c успехом хоть и частично, но обновлен.")
         return final_patch_booking
 
-# if __name__ == "__main__":
-#     auth_session = requests.Session()
-#     api_client = BookingApiClient(auth_session)
-#     client = BookingScenarios(auth_session, api_client)
-#     booking_id_list = client.patch_booking_and_verify_changes()
+if __name__ == "__main__":
+    auth_session = requests.Session()
+    api_client = BookingApiClient(auth_session)
+    client = BookingScenarios(auth_session, api_client)
+    booking_id_list = client.patch_booking_and_verify_changes()
 
     def delete_existing_booking_and_verify(self):
         '''

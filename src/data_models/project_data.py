@@ -10,6 +10,21 @@ load_dotenv()
 
 fake = Faker()
 
+class BookingCheckDates(BaseModel):
+    checkin: str
+    checkout: str
+
+class BookingResponseData(BaseModel):
+    firstname: str
+    lastname: str
+    totalprice: int
+    depositpaid: bool
+    bookingdates: BookingCheckDates
+    additionalneeds: Optional[str] = None
+
+
+""" Класс для генерации проверок кода директории src """
+
 class BookingAuthData:
     def make_auth_data(self):
         """Создаем и возвращаем данные для переиспользования """
@@ -45,11 +60,11 @@ class GenerateDates:
         "bookingdates": self.dates,
         "additionalneeds": "Breakfast"
     }
-
-# if __name__ == "__main__":  # Проверка содержания отправляемого тела запроса
-#     req = GenerateDates()
-#     request_data = req.booking_data()
-#     print(request_data)
+#
+# # if __name__ == "__main__":  # Проверка содержания отправляемого тела запроса
+# #     req = GenerateDates()
+# #     request_data = req.booking_data()
+# #     print(request_data)
 
     def upd_booking_data(self):
         """Данные для полного изменения букинга"""
@@ -69,16 +84,3 @@ class GenerateDates:
             "firstname": "Patcheson",
             "lastname": "Patchey"
         }
-
-
-class BookingCheckDates(BaseModel):
-    checkin: str
-    checkout: str
-
-class BookingResponseData(BaseModel):
-    firstname: str
-    lastname: str
-    totalprice: int
-    depositpaid: bool
-    bookingdates: BookingCheckDates
-    additionalneeds: Optional[str] = None
