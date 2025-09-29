@@ -1,19 +1,20 @@
 
 import requests
-from conftest import booking_data, upd_booking_data, patch_booking_data, booking_id, bookingid
 from src.api.api_manager import BookingApiClient
+from  src.data_models.project_data import GenerateDates
 
 class BookingScenarios:
     def __init__(self, auth_session, api_client: BookingApiClient):
         self.auth_session = auth_session
         self.api_client = api_client
+        self.generate_dates = GenerateDates()
 
     def create_check_delete_booking(self):
         '''
-        Сценарий 1: создание букинга, проерка ID созданного букинга,
+        Сценарий 1: создание букинга, проверка ID созданного букинга,
         затем удаление букинга '''
         # 1. Создать букинг
-        create_book = self.api_client.create_booking(booking_data())
+        create_book = self.api_client.create_booking()
         booking_id = create_book.get("bookingid")
         print("Создан booking_id =", booking_id)
 
@@ -23,7 +24,7 @@ class BookingScenarios:
         print("Наличие ID успешно проверено")
 
         # 3. Удалить букинг
-        del_book = self.api_client.delete_booking(booking_id)
+        self.api_client.delete_booking(booking_id)
         print(f"booking с ID {booking_id} успешно удален.")
         return booking_id
 
@@ -38,11 +39,11 @@ class BookingScenarios:
         Cценарий 2: создание букинга, проерка получения букинга по ID
         '''
         # 1. Создать букинг
-        create_book = self.api_client.create_booking(booking_data())
+        create_book = self.api_client.create_booking()
         body_booking_id = create_book.get("booking")
         check_booking_id = create_book.get("bookingid")
-        print(f'ID созданного букинга = {check_booking_id}')
-        print(f'Тело созданного букинга = {body_booking_id}')
+        print(f'ID нового букинга {check_booking_id}')
+        print(f'Тело нового букинга {body_booking_id}')
 
         #2. Получить созданный букинг по ID
         get_booking_ID = self.api_client.get_booking(check_booking_id)
@@ -79,14 +80,14 @@ class BookingScenarios:
         в общем списке, а затем удалить букинг
         '''
         # 1. Создать букинг
-        create_book = self.api_client.create_booking(booking_data())
+        create_book = self.api_client.create_booking()
         booking_id = create_book.get("bookingid")
         print("Создан booking_id =", booking_id)
 
         #2  Получить общий список букингов
         bookings = self.api_client.get_all_bookings()
         assert len(bookings) > 0, "Список bookings пуст"
-        print(bookings)
+        print(f"Получен список всех ID {bookings}")
         print(f"Получено {len(bookings)} bookings.")
 
         #3. Проверить, что созданный букинг есть в списке
@@ -95,7 +96,7 @@ class BookingScenarios:
         print("Созданный букинг действительно находится в списке всех букингов")
 
         #4.  Удалить букинг
-        del_book = self.api_client.delete_booking(booking_id)
+        self.api_client.delete_booking(booking_id)
         print(f"booking с ID {booking_id} успешно удален.")
         return booking_id
 
@@ -110,14 +111,16 @@ class BookingScenarios:
         Cценарий 5: созданиe букинга, изменение всего тела букинга
         '''
         # 1. Создать букинг
-        create_book = self.api_client.create_booking(booking_data())
+        create_book = self.api_client.create_booking()
         booking_id = create_book.get("bookingid")
-        print("Создан booking_id =", booking_id)
+        print(f"Создан букинг {create_book}")
+        print("ID созданного booking_id =", booking_id)
 
         #2. Изменить букинг
-        update_booking_data =  upd_booking_data()
-        updated_booking = self.api_client.update_booking(booking_id, update_booking_data)
-        assert updated_booking == update_booking_data, f"Букинг не обновился."
+        updating_booking_data =  self.generate_dates.upd_booking_data()
+        updated_booking = self.api_client.update_booking(booking_id, updating_booking_data)
+        print(updated_booking)
+        assert updated_booking == updating_booking_data, f"Букинг не обновился."
         print(f"booking с ID {booking_id} успешно обновлен.")
         return updated_booking
 
@@ -133,23 +136,25 @@ class BookingScenarios:
         только фамилию и имя клиента
         '''
         # 1. Создать букинг
-        create_book = self.api_client.create_booking(booking_data())
+        create_book = self.api_client.create_booking()
+        print(create_book)
         booking_id = create_book.get("bookingid")
         print("Создан booking_id =", booking_id)
 
         #2. Частично изменить букинг
-        ptch_booking_data = patch_booking_data()
+        ptch_booking_data = self.generate_dates.patch_booking_data()
         patched_booking = self.api_client.patch_booking(booking_id, ptch_booking_data)
+        print (patched_booking)
         final_patch_booking = {key: patched_booking[key] for key in ['firstname', 'lastname']}
         assert final_patch_booking == ptch_booking_data, f"Букинг частично не обновился."
         print(f"booking с ID {booking_id} c успехом хоть и частично, но обновлен.")
         return final_patch_booking
 
-# if __name__ == "__main__":
-#     auth_session = requests.Session()
-#     api_client = BookingApiClient(auth_session)
-#     client = BookingScenarios(auth_session, api_client)
-#     booking_id_list = client.patch_booking_and_verify_changes()
+if __name__ == "__main__":
+    auth_session = requests.Session()
+    api_client = BookingApiClient(auth_session)
+    client = BookingScenarios(auth_session, api_client)
+    booking_id_list = client.patch_booking_and_verify_changes()
 
     def delete_existing_booking_and_verify(self):
         '''
@@ -157,7 +162,7 @@ class BookingScenarios:
         убедиться, что он удален из общего списка
         '''
         # 1. Создать букинг
-        create_book = self.api_client.create_booking(booking_data())
+        create_book = self.api_client.create_booking()
         booking_id = create_book.get("bookingid")
         print("Создан booking_id =", booking_id)
 
@@ -172,7 +177,7 @@ class BookingScenarios:
 
         # 4. Проверить, что созданный букинг есть в списке
         booking_ids = [b.get("bookingid") for b in bookings]
-        assert booking_id not in booking_ids, "Удаленный букинг еть в списке всех букингов"
+        assert booking_id not in booking_ids, "Удаленный букинг есть в списке всех букингов"
         print("Удаленный букинг отсутствует в списке всех букингов")
 
 # if __name__ == "__main__":
@@ -187,7 +192,7 @@ class BookingScenarios:
         попытаться повторно удалить.
         '''
         # 1. Создать букинг
-        create_book = self.api_client.create_booking(booking_data())
+        create_book = self.api_client.create_booking()
         booking_id = create_book.get("bookingid")
         print("Создан booking_id =", booking_id)
 
