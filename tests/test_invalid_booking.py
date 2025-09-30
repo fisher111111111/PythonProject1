@@ -1,17 +1,20 @@
-import pytest
+
 from src.enums.constant_of_url import ConstURL
 from src.data_models.project_data import BookingResponseData
 from src.utils.project_data_validator import validate_dates
+import allure
 
 class TestBookings:
 
     BASE_URL = ConstURL.BASE_URL.value
 
+    @allure.title("Попытка создания букинга без обязательных полей")
     def test_create_wrong_booking(self, auth_token, wrong_booking_data):
         # Create
         create = auth_token.post(f"{TestBookings.BASE_URL}/booking", json=wrong_booking_data)
         assert create.status_code == 500
 
+    @allure.title("Попытка обновления букинга без авторизации")
     def test_upd_booking(self, auth_token, booking_data, upd_booking_data):
         # Create
         create = auth_token.post(f"{TestBookings.BASE_URL}/booking", json=booking_data)
@@ -34,6 +37,7 @@ class TestBookings:
         check_delete = auth_token.get(f"{TestBookings.BASE_URL}/booking/{booking_id}")
         assert check_delete.status_code == 404, f"Букинг с ID {booking_id} не был удален"
 
+    @allure.title("Попытка частичного обновления букинга без авторизации")
     def test_patch_booking(self, auth_token, booking_data, patch_booking_data):
         # Create
         create = auth_token.post(f"{TestBookings.BASE_URL}/booking", json=booking_data)

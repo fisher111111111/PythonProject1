@@ -40,11 +40,15 @@ https://restful-booker.herokuapp.com/apidoc/index.html
 pip install -r requirements.txt
 ````
 
-Для запуска тестов используйте следующую команду:
+Для запуска тестов используйте команду:
 ```bash
 pytest
 ```
-Для получения отчета в Allure Report используйте следующую команду:
+Для запуска тестов с сохранением результатов в Allure используйте команду:
+```bash
+python -m pytest tests -v -s --alluredir=allure-results
+```
+Для получения отчета в Allure Report используйте команду:
 ```bash
 allure serve allure-results
 ```
