@@ -16,11 +16,6 @@ class PingScenario:
         print('Получен ожидаемый статус код:', ping.status_code)
         return ping
 
-# if __name__ == "__main__":
-#     health_check = HealthCheck(requests)
-#     hc = PingScenario(health_check)
-#     hc.right_ping()
-
     def wrong_ping (self):
         '''Сценарий 2: проверяем ping неверным методом '''
         ping = self.ping_check.broke_health_check()
@@ -30,9 +25,5 @@ class PingScenario:
             print(f" Получен ожидаемый статус-код: {ping.status_code}")
         return ping
 
-# if __name__ == "__main__":
-#     health_check = HealthCheck(requests)
-#     hc = PingScenario(health_check)
-#     hc.wrong_ping()
 
 

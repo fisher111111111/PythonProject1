@@ -1,7 +1,9 @@
 from src.utils.urls import URLs
 from src.data_models.project_data import BookingResponseData
+from src.data_models.project_data_patch import BookingPatchData
 from src.data_models.project_data_all_bookings import Bookings
 from src.utils.project_data_validator import validate_dates
+from src.utils.project_patch_data_validator import validate_patch_dates
 from src.utils.project_data_all_bookings_validator import validate_booking_list
 
 class TestBookings:
@@ -44,7 +46,7 @@ class TestBookings:
         # Get + Валидировать и данные, и схему
         response = auth_token.get(URLs.booking_endpoint_id(get_booking_id))
         assert response.status_code == 200
-        validate_dates(response, model=BookingResponseData, expected_data=patch_booking_data)
+        validate_patch_dates(response, model=BookingPatchData, expected_data=patch_booking_data)
 
     def test_check_get_all_booking(self, auth_token, get_booking_id, bookingids, del_booking_id):
         # Get_all + Валидировать и данные, и схему

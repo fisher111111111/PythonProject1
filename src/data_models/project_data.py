@@ -16,6 +16,15 @@ class BookingCheckDates(BaseModel):
     checkin: str
     checkout: str
 
+    @classmethod
+    def fake_checkdates(cls) -> "BookingCheckDates":
+        start_date = fake.date_between(start_date="today", end_date="+1m")
+        end_date = start_date + timedelta(days=random.randint(1, 10))
+        return cls(
+            checkin= start_date.strftime('%Y-%m-%d'),
+            checkout= end_date.strftime('%Y-%m-%d')
+        )
+
 class BookingResponseData(BaseModel):
     firstname: str
     lastname: str
@@ -24,21 +33,75 @@ class BookingResponseData(BaseModel):
     bookingdates: BookingCheckDates
     additionalneeds: Optional[str] = None
 
+    """ Функции для генерации тестовых данных"""
+    @classmethod
+    def fake_booking_data(cls) -> "BookingResponseData":
+        obj = cls(
+            firstname=fake.first_name(),
+            lastname=fake.last_name(),
+            totalprice= fake.random_int(min=100, max=10000),
+            depositpaid= fake.boolean(),
+            bookingdates= BookingCheckDates.fake_checkdates(),
+            additionalneeds=fake.random_element(elements=("breakfast", "dinner", "supper", None))
+        )
+        return obj.model_dump()
 
-""" Класс для генерации проверок кода директории src """
+# a= BookingResponseData.fake_booking_data()
+# print (a)
 
-BASE_URL = ConstURL.BASE_URL.value
+    @classmethod
+    def fake_upd_booking_data(cls) -> "BookingResponseData":
+        obj = cls(
+            firstname="Updately",
+            lastname= "Updatenberg",
+            totalprice=fake.random_int(min=100, max=10000),
+            depositpaid=fake.boolean(),
+            bookingdates=BookingCheckDates.fake_checkdates(),
+            additionalneeds=fake.random_element(elements=("breakfast", "dinner", "supper", None))
+        )
+        return obj.model_dump()
+
+    @classmethod
+    def fake_patch_booking_data(cls) -> "BookingResponseData":
+        obj = cls(
+            firstname="Patchey",
+            lastname= "Patchison",
+            totalprice=fake.random_int(min=100, max=10000),
+            depositpaid=fake.boolean(),
+            bookingdates=BookingCheckDates.fake_checkdates(),
+            additionalneeds=fake.random_element(elements=("breakfast", "dinner", "supper", None))
+        )
+        return obj.model_dump(include={"firstname", "lastname"})
+
+""" Класс генерации невалидных данных"""
+class BookingWrongData(BaseModel):
+    firstname: int = 123
+    lastname: int = 456
+    totalprice: str = "non integer"
+    depositpaid: bool = Field(default_factory=fake.boolean)
+    bookingdates: BookingCheckDates = Field(default_factory=BookingCheckDates.fake_checkdates)
+    additionalneeds: str | None = Field(
+        default_factory=lambda: fake.random_element(elements=("breakfast", "dinner", "supper", None)))
+
+    @classmethod
+    def fake_wrong_booking_data(cls):
+        obj = cls(
+            firstname= 123,
+            lastname= 456,
+            totalprice="string",
+            depositpaid=fake.boolean(),
+            bookingdates=BookingCheckDates.fake_checkdates(),
+            additionalneeds=fake.random_element(elements=("breakfast", "dinner", "supper", None))
+        )
+        return obj.model_dump()
+
+""" Класс для генерации авторизации """
 
 class BookingAuthData:
     def make_auth_data(self):
         """Создаем и возвращаем данные для авторизации """
         auth_data = os.getenv("VALID_USERNAME"), os.getenv("VALID_PASSWORD")
         return auth_data
-
-# if __name__ == "__main__":  # Проверка содержания отправляемого тела запроса
-#     auth = BookingAuthData()
-#     auth_data = auth.make_auth_data()
-#     print(auth_data)
 
     def non_auth_data(self):
         """ Неправильные данные для авторизации"""
@@ -63,65 +126,3 @@ class BookingAuthData:
         booking_token = response.json()['token']
         token_session.headers.update({"Cookie": f'token={booking_token}'})
         return token_session
-
-
-class GenerateDates:
-    def generate_booking_dates(self):
-        """Генерация случайных дат checkin и checkout"""
-        start_date = fake.date_between(start_date="today", end_date="+1m")
-        end_date = start_date + timedelta(days=random.randint(1, 10))
-        return {
-            'checkin': start_date.strftime('%Y-%m-%d'),
-            'checkout': end_date.strftime('%Y-%m-%d')
-        }
-
-    def booking_data(self):
-        """Создание данных букинга"""
-        self.dates = self.generate_booking_dates()
-        return {
-        "firstname": fake.first_name(),
-        "lastname": fake.last_name(),
-        "totalprice": fake.random_int(min=100, max=10000),
-        "depositpaid": True,
-        "bookingdates": self.dates,
-        "additionalneeds": "Breakfast"
-    }
-#
-# # if __name__ == "__main__":  # Проверка содержания отправляемого тела запроса
-# #     req = GenerateDates()
-# #     request_data = req.booking_data()
-# #     print(request_data)
-
-    def wrong_booking_data(self):
-        """ Тестирование раздела Booking
-        Фикстура генерации отправляемых Неправильных данных букинга"""
-        return {
-            "firstname": None,
-            "lastname": None,
-            "totalprice": fake.random_int(min=100, max=10000),
-            "depositpaid": True,
-            "bookingdates": {
-                "checkin": "2024-04-05",
-                "checkout": "2024-04-08"
-            },
-            "additionalneeds": "Breakfast"
-        }
-
-    def upd_booking_data(self):
-        """Данные для полного изменения букинга"""
-        self.dates = self.generate_booking_dates()
-        return {
-            "firstname": "Updater",
-            "lastname": "Updatenberg",
-            "totalprice": fake.random_int(min=100, max=10000),
-            "depositpaid": False,
-            "bookingdates": self.dates,
-            "additionalneeds": "Dinner"
-        }
-
-    def patch_booking_data(self):
-        """Данные для частичного изменения букинга"""
-        return {
-            "firstname": "Patcheson",
-            "lastname": "Patchey"
-        }
