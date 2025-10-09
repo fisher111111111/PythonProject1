@@ -58,19 +58,6 @@ class TestBookings:
         assert response.status_code == 200
         validate_patch_dates(response, model=BookingPatchData, expected_data=patch_booking_data)
 
-        # # Delete
-        # delete = auth_token.delete(f"{TestBookings.BASE_URL}/booking/{booking_id}")
-        # assert delete.status_code == 201
-
-        # # Patching
-        # patch = auth_token.patch(URLs.booking_endpoint_id(get_booking_id), json=patch_booking_data)
-        # assert patch.status_code == 200
-        #
-        # # Get + Валидировать и данные, и схему
-        # response = auth_token.get(URLs.booking_endpoint_id(get_booking_id))
-        # assert response.status_code == 200
-        # validate_patch_dates(response, model=BookingPatchData, expected_data=patch_booking_data)
-
     def test_check_get_all_booking(self, auth_token, bookingids):
         # Get_all + Валидировать и данные, и схему
         response = auth_token.get(URLs.bookings_endpoint())

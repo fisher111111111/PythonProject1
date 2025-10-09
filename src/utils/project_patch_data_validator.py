@@ -4,7 +4,6 @@ from requests import Response
 from typing import Type, Optional
 from src.data_models.project_data_patch import BookingPatchData
 
-
 def validate_patch_dates(
     response: Response,
     model: Type[BookingPatchData],

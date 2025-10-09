@@ -38,28 +38,6 @@ class BookingPatchData(BaseModel):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
-    # def model_dump(self, *, include = None):
-    #     if include is not None:
-    #         return {k: (v.model_dump() if isinstance(v, BaseModel) else v) for k, v in self.__dict__.items() if k in include}
-    #     else:
-    #         return {k: (v.model_dump() if isinstance(v, BaseModel) else v) for k, v in self.__dict__.items()}
-    #
-    # @classmethod
-    # def fake_patch_booking_data(cls) -> "BookingPatchData":
-    #     required_fields = ["firstname", "lastname", "totalprice", "depositpaid", "bookingdates"]
-    #     selected_fields = random.sample(required_fields, random.randint(1, len(required_fields)))
-    #
-    #     obj = cls(
-    #         firstname=fake.first_name(),
-    #         lastname=fake.last_name(),
-    #         totalprice=fake.random_int(min=100, max=10000),
-    #         depositpaid=fake.boolean(),
-    #         bookingdates=BookingCheckDatesPatch.fake_checkdates(),
-    #         additionalneeds=fake.random_element(elements=("breakfast", "dinner", "supper", None))
-    #     )
-    #     return obj
-
-
     @classmethod
     def fake_patch_booking_data(cls) -> "BookingPatchData":
         required_fields = ["firstname", "lastname", "totalprice", "depositpaid", "bookingdates"]

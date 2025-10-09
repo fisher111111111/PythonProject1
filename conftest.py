@@ -10,7 +10,6 @@ from src.scenarios.scenario_ping import PingScenario
 from src.api.health_check import HealthCheck
 
 BASE_URL = ConstURL.BASE_URL.value
-BOOKING = ConstURL.BOOKING_ENDPOINT.value
 
 @pytest.fixture(scope="session")
 def ping_check():

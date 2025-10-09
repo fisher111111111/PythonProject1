@@ -46,9 +46,6 @@ class BookingResponseData(BaseModel):
         )
         return obj.model_dump()
 
-# a= BookingResponseData.fake_booking_data()
-# print (a)
-
     @classmethod
     def fake_upd_booking_data(cls) -> "BookingResponseData":
         obj = cls(
