@@ -10,7 +10,8 @@ class TestBookings:
         create = auth_token.post(URLs.bookings_endpoint(), json=fake_wrong_booking_data)
         assert create.status_code == 500
 
-    def test_upd_booking(self, auth_token, fake_booking_data, upd_booking_data):
+    def test_upd_booking(self, auth_token, fake_booking_data, upd_booking_data, del_booking_id):
+
         # Create
         create = auth_token.post(URLs.bookings_endpoint(), json=fake_booking_data)
         assert create.status_code == 200
@@ -28,7 +29,10 @@ class TestBookings:
         check_delete = auth_token.get(URLs.booking_endpoint_id(booking_id))
         assert check_delete.status_code == 404, f"Букинг с ID {booking_id} не был удален"
 
-    def test_patch_booking(self, auth_token, fake_booking_data, patch_booking_data):
+    def test_patch_booking(self, auth_token, fake_booking_data, patch_booking_data, del_booking_id):
+        # Активируем del_booking_id
+        a = del_booking_id
+
         # Create
         create = auth_token.post(URLs.bookings_endpoint(), json=fake_booking_data)
         assert create.status_code == 200
@@ -43,6 +47,6 @@ class TestBookings:
         assert delete.status_code == 201
 
         # Check delete
-        check_delete = auth_token.get(URLs.booking_endpoint_id(booking_id))
-        assert check_delete.status_code == 404, f"Букинг с ID {booking_id} не был удален"
+        check_delete = auth_token.delete(URLs.booking_endpoint_id(booking_id))
+        assert check_delete.status_code == 405, f"Букинг с ID {booking_id} не был удален"
 

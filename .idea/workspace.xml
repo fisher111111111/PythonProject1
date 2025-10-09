@@ -23,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="12b944968d293c3d51eb7f8e6787367e382cf17f" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,42 +49,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.Python tests for test_create_and_delete.TestBookings.executor": "Run",
-    "Python tests.Python tests for test_create_and_delete.TestBookings.test_create_booking.executor": "Run",
-    "Python tests.Python tests in test_valid_booking_2.py.executor": "Run",
-    "Python tests.Python tests in потом_удалить.py.executor": "Run",
-    "Python tests.pytest in bin.executor": "Run",
-    "Python.222.executor": "Run",
-    "Python.api_manager.executor": "Run",
-    "Python.auth_client.executor": "Run",
-    "Python.bad_api_manager.executor": "Debug",
-    "Python.bad_auth_client.executor": "Run",
-    "Python.conftest.executor": "Run",
-    "Python.health_check.executor": "Run",
-    "Python.project_data.executor": "Run",
-    "Python.project_data_patch.executor": "Run",
-    "Python.scenario_booking3.executor": "Run",
-    "Python.scenarios.executor": "Run",
-    "Python.scenarios_booking2.executor": "Run",
-    "Python.потом_удалить.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "ShowUsagesActions.previewPropertyKey": "true",
-    "git-widget-placeholder": "version2",
-    "last_opened_file_path": "C:/Users/user/PycharmProjects/PythonProject1/src/utils",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Python"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for test_create_and_delete.TestBookings.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for test_create_and_delete.TestBookings.test_create_booking.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_valid_booking_2.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in потом_удалить.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in bin.executor&quot;: &quot;Run&quot;,
+    &quot;Python.222.executor&quot;: &quot;Run&quot;,
+    &quot;Python.api_manager.executor&quot;: &quot;Run&quot;,
+    &quot;Python.auth_client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.bad_api_manager.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.bad_auth_client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.conftest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.health_check.executor&quot;: &quot;Run&quot;,
+    &quot;Python.project_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.project_data_patch.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scenario_booking3.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scenarios.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scenarios_booking2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.потом_удалить.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;ShowUsagesActions.previewPropertyKey&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;version2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/PycharmProjects/PythonProject1/src/utils&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Python&quot;
   },
-  "keyToStringList": {
-    "GitStage.ChangesTree.GroupingKeys": [
-      "directory",
-      "module",
-      "repository"
+  &quot;keyToStringList&quot;: {
+    &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;,
+      &quot;module&quot;,
+      &quot;repository&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\PycharmProjects\PythonProject1\src\utils" />
@@ -97,7 +97,7 @@
       <recent name="C:\Users\user\PycharmProjects\PythonProject1\src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.project_data_patch">
     <configuration name="auth_client" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject1" />
       <option name="ENV_FILES" value="" />
@@ -120,8 +120,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="project_data_patch" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PythonProject1" />
+    <configuration name="project_data_patch" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -133,7 +132,8 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\user\PycharmProjects\PythonProject1\src\data_models\project_data_patch.py" />
+      <module name="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/data_models/project_data_patch.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -223,8 +223,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.auth_client" />
       <item itemvalue="Python.project_data_patch" />
+      <item itemvalue="Python.auth_client" />
       <item itemvalue="Python.project_resp_data_validator" />
       <item itemvalue="Python.scenario_auth" />
       <item itemvalue="Python tests.pytest in bin" />
@@ -235,8 +235,8 @@
         <item itemvalue="Python tests.Python tests for test_scenario_check.TestPingScenario.test_right_ping" />
         <item itemvalue="Python.scenario_auth" />
         <item itemvalue="Python.project_resp_data_validator" />
-        <item itemvalue="Python.project_data_patch" />
         <item itemvalue="Python.auth_client" />
+        <item itemvalue="Python tests.Python tests for test_scenario_check.TestPingScenario.test_right_ping" />
       </list>
     </recent_temporary>
   </component>
@@ -351,7 +351,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="version2" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
