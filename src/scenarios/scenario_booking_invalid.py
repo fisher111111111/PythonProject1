@@ -1,90 +1,90 @@
-
 import requests
 from src.api.api_manager import BookingApiClient
-from  src.data_models.project_data import GenerateDates
+from  src.data_models.project_data import BookingResponseData
 
 class BadBookingScenarios:
     def __init__(self, auth_session, api_client: BookingApiClient):
         self.auth_session = auth_session
         self.api_client = api_client
-        self.generate_dates = GenerateDates()
+        self.generate_dates = BookingResponseData()
 
     def bad_create_booking(self):
         '''
-        Сценарий 1: Попытка создать букинг без обязательных полей'''
+        Сценарий 1: Попытка создать букинг с пустыми полями'''
         # 1. Создать букинг
-        self.api_client.create_booking()
+        response = self.booking_session.post(f"{self.base_url}{self.booking}/{booking_id}",
+                                             json=None,
+                                             headers=self.headers)
+        return response.status_code, response.text
 
-# if __name__ == "__main__":
-#     auth_session = requests.Session()
-#     api_client = BookingApiClient(auth_session)
-#     client = BookingScenarios(auth_session, api_client)
-#     result = client.create_wrong_booking()
-#     print(result)
-
-    def bad_update_booking(self):
+    def check_after_delete_booking(self):
         '''
-        Cценарий 5: созданиe букинга, изменение всего тела букинга
-        '''
+        Сценарий 2: создание букинга, затем удаление букинга и попытка получения
+         удаленого букинга по ID '''
         # 1. Создать букинг
         create_book = self.api_client.create_booking()
         booking_id = create_book.get("bookingid")
-        print(f"Создан букинг {create_book}")
+        print("Создан booking_id =", booking_id)
 
-        #2. Изменить букинг без авторизации
-        updating_booking_data =  self.generate_dates.upd_booking_data()
-        updated_booking = self.api_client.update_booking_no_auth(booking_id, updating_booking_data)
-        print(f"При попытке изменить букинг без авторизации получаем {updated_booking}")
-        return updated_booking
+        # 2. Удалить букинг
+        self.api_client.delete_booking(booking_id)
+        print(f"booking с ID {booking_id} успешно удален.")
+        return booking_id
 
-# if __name__ == "__main__":
-#     auth_session = requests.Session()
-#     api_client = BookingApiClient(auth_session)
-#     client = BadBookingScenarios(auth_session, api_client)
-#     booking_id_list = client.bad_update_booking()
+        #3 Получить удаленный букинг по ID
+        get_del_booking = self.api_client.get_booking()
+        if (200 <= get_del_booking.status_code <= 299):
+            print('букинг получен по удаленному ID, что не ожидалось')
+        else:
+            print(f"Получен ожидаемый статус код {get_del_booking.status_code}")
 
-    def bad_patch_booking(self):
+    def del_booking_and_try_del_again(self):
         '''
-        Cценарий 6: создать букинг, частично обновить в букинге
-        только фамилию и имя клиента
+        Сценарий 3: создать и удалить существующий букинг,
+        попытаться повторно удалить.
         '''
         # 1. Создать букинг
         create_book = self.api_client.create_booking()
         booking_id = create_book.get("bookingid")
         print("Создан booking_id =", booking_id)
 
-        #2. Частично изменить букинг
-        ptch_booking_data = self.generate_dates.patch_booking_data()
-        patched_booking = self.api_client.patch_booking_no_auth(booking_id, ptch_booking_data)
-        print(f"При попытке частично обновить букинг без авторизации \nполучен ответ сервера {patched_booking}")
-        return patched_booking
-
-# if __name__ == "__main__":
-#     auth_session = requests.Session()
-#     api_client = BookingApiClient(auth_session)
-#     client = BadBookingScenarios(auth_session, api_client)
-#     booking_id_list = client.bad_patch_booking()
-
-    def bad_delete_booking(self):
-        '''
-        Сценарий 7: создать и удалить существующий букинг,
-        убедиться, что он удален из общего списка
-        '''
-        # 1. Создать букинг
-        create_book = self.api_client.create_booking()
-        booking_id = create_book.get("bookingid")
-        print("Создан booking_id =", booking_id)
-
-        #2. Удалить букинг без авторизации
-        delete_non_auth = self.api_client.delete_booking_no_auth(booking_id)
-        print(f"При попытке удалить букинг без регистрации\nполучен результат {delete_non_auth}")
-
-        # 3. Удалить букинг с авторизацией
+        # 2. Удалить букинг
         del_response = self.api_client.delete_booking(booking_id)
+        print(f"booking с ID {booking_id} отправлен на удаление.")
         print(f'букинг {booking_id} удален, что подтверждает ответ сервера {del_response}')
 
-# if __name__ == "__main__":
-#     auth_session = requests.Session()
-#     api_client = BookingApiClient(auth_session)
-#     client = BadBookingScenarios(auth_session, api_client)
-#     booking_id_list = client.bad_delete_booking()
+        # 3. Попытка повторного удаления букинга
+        repeat_delete_response = del_response
+        if (200 <= repeat_delete_response.status_code <= 299):
+            print('букинг повторно удален, что не ожидалось')
+        else:
+            print(f"Повторное удаление букинга с ID {booking_id} завершилось с кодом {repeat_delete_response.status_code}")
+
+    def update_booking_no_auth(self, booking_id, upd_booking_data):
+        '''
+        Сценарий 4: Отправляет запрос на полное обновление букинга без авторизации
+        '''
+        response = self.booking_session.put(f"{self.base_url}{self.booking}/{booking_id}",
+                                                           auth= None,
+                                                           json=upd_booking_data,
+                                                           headers=self.headers)
+        return response.status_code,response.text
+
+    def patch_booking_no_auth(self,booking_id, patch_booking_data):
+        '''
+        Сценарий 5: Отправляет запрос на частичное обновление букинга без авторизации
+        '''
+        response = self.booking_session.patch(f"{self.base_url}{self.booking}/{booking_id}",
+                                                             auth=None,
+                                                             headers=self.headers,
+                                                             json=patch_booking_data)
+        return response.status_code,response.text
+
+    def delete_booking_no_auth(self, booking_id):
+        '''
+        Сценарий 6: Отправляет запрос на удаление букинга без авторизации
+        '''
+        response = self.booking_session.delete(f"{self.base_url}{self.booking}/{booking_id}",
+                                                              auth=None,
+                                                              headers=self.headers)
+        return response.status_code, response.text
