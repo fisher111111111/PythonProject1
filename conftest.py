@@ -1,6 +1,6 @@
 import pytest
 import requests
-from scenarios.scenario_auth import AuthScenario
+from src.scenarios.scenario_auth import AuthScenario
 from src.api.auth_client import AuthApiClient
 from src.enums.constant_of_url import ConstURL
 from src.data_models.project_data import BookingAuthData, BookingResponseData, BookingWrongData

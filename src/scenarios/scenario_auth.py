@@ -1,4 +1,3 @@
-import requests
 from src.api.auth_client import AuthApiClient
 
 class AuthScenario:
