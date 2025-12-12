@@ -49,7 +49,7 @@ https://restful-booker.herokuapp.com/apidoc/index.html
 └── requirements.txt
 ```
 ### Расположение проекта
-Проект расположен на удаленном репозитории на [**Github**](https://github.com/fisher111111111/Module_4_2)
+Проект расположен на удаленном репозитории на [**Github**](https://github.com/fisher111111111/PythonProject1)
 
 ### Запуск автоматизированных тестов на Python 
 
