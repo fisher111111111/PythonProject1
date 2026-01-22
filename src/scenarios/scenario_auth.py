@@ -1,4 +1,4 @@
-from src.api.auth_client import AuthApiClient
+from PythonProject1.src.api.auth_client import AuthApiClient
 
 class AuthScenario:
     def __init__(self, auth_client:AuthApiClient):

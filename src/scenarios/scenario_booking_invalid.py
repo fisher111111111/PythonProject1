@@ -1,6 +1,6 @@
 import requests
-from src.api.api_manager import BookingApiClient
-from  src.data_models.project_data import BookingResponseData
+from PythonProject1.src.api.api_manager import BookingApiClient
+from  PythonProject1.src.data_models.project_data import BookingResponseData
 
 class BadBookingScenarios:
     def __init__(self, auth_session, api_client: BookingApiClient):

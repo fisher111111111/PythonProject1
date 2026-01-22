@@ -1,4 +1,4 @@
-from src.enums.constant_of_url import ConstURL
+from PythonProject1.src.enums.constant_of_url import ConstURL
 
 class URLs:
     @staticmethod

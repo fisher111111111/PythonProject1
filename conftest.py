@@ -1,13 +1,13 @@
 import pytest
 import requests
-from src.scenarios.scenario_auth import AuthScenario
-from src.api.auth_client import AuthApiClient
-from src.enums.constant_of_url import ConstURL
-from src.data_models.project_data import BookingAuthData, BookingResponseData, BookingWrongData
-from src.data_models.project_data_patch import BookingPatchData
+from PythonProject1.src.scenarios.scenario_auth import AuthScenario
+from PythonProject1.src.api.auth_client import AuthApiClient
+from PythonProject1.src.enums.constant_of_url import ConstURL
+from PythonProject1.src.data_models.project_data import BookingAuthData, BookingResponseData, BookingWrongData
+from PythonProject1.src.data_models.project_data_patch import BookingPatchData
 import time
-from src.scenarios.scenario_ping import PingScenario
-from src.api.health_check import HealthCheck
+from PythonProject1.src.scenarios.scenario_ping import PingScenario
+from PythonProject1.src.api.health_check import HealthCheck
 
 BASE_URL = ConstURL.BASE_URL.value
 

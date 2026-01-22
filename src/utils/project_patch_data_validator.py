@@ -2,7 +2,7 @@ import pytest
 from pydantic import ValidationError
 from requests import Response
 from typing import Type, Optional
-from src.data_models.project_data_patch import BookingPatchData
+from PythonProject1.src.data_models.project_data_patch import BookingPatchData
 
 def validate_patch_dates(
     response: Response,

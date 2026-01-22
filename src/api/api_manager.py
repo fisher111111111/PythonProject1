@@ -1,7 +1,6 @@
-from src.enums.constant_of_url import ConstURL
-from src.enums.constant_of_headers import ConstHeaders
-from src.data_models.project_data import BookingAuthData, GenerateDates
-import requests
+from PythonProject1.src.enums.constant_of_url import ConstURL
+from PythonProject1.src.enums.constant_of_headers import ConstHeaders
+from PythonProject1.src.data_models.project_data import BookingAuthData, BookingResponseData
 from requests.auth import HTTPBasicAuth
 
 class BookingApiClient:
@@ -14,11 +13,11 @@ class BookingApiClient:
         self.accept_type = ConstHeaders.ACCEPT.value
         self.auth_data = BookingAuthData().make_auth_data()
         self.auth_obj = HTTPBasicAuth(self.auth_data["username"], self.auth_data["password"])
-        self.generator = GenerateDates()
+        self.generator = BookingResponseData
 
     def create_booking(self):
         '''  Отправляет запрос на создание букинга. '''
-        booking_data = self.generator.booking_data()
+        booking_data = self.generator.fake_booking_data()
         response = self.booking_session.post(f"{self.base_url}{self.booking}",
                                              headers = self.headers,
                                              json=booking_data)
@@ -41,11 +40,10 @@ class BookingApiClient:
         '''
         Отправляет запрос на полное обновление букинга
         '''
-
-        response = self.booking_session.put(
-            f"{self.base_url}{self.booking}/{booking_id}", json=upd_booking_data,
-                                                           headers=self.headers,
-                                                           auth=self.auth_obj)
+        response = self.booking_session.put(f"{self.base_url}{self.booking}/{booking_id}",
+                                            json=upd_booking_data,
+                                            headers=self.headers,
+                                            auth=self.auth_obj)
         if response.status_code != 200:
             response.raise_for_status()
         return response.json()

@@ -1,5 +1,4 @@
-from src.enums.constant_of_url import ConstURL
-import requests
+from PythonProject1.src.enums.constant_of_url import ConstURL
 
 class HealthCheck:
     def __init__(self, health_check):
@@ -9,8 +8,6 @@ class HealthCheck:
 
     def make_health_check(self):
         response = self.health_check.get(f"{self.base_url}{self.ping}")
-        # if response.status_code != 201:  # это для сценария
-        #     response.raise_for_status()
         return response
 
     def broke_health_check(self):

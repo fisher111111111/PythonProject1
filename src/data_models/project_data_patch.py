@@ -1,10 +1,8 @@
-import requests
 from datetime import timedelta
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from typing import Optional
 import random
 from faker import Faker
-import os
 from dotenv import load_dotenv
 from enums.constant_of_url import ConstURL
 

@@ -1,13 +1,12 @@
-
 import requests
-from src.api.api_manager import BookingApiClient
-from  src.data_models.project_data import GenerateDates
+from PythonProject1.src.api.api_manager import BookingApiClient
+from  PythonProject1.src.data_models.project_data import BookingResponseData
 
 class BookingScenarios:
     def __init__(self, auth_session, api_client: BookingApiClient):
         self.auth_session = auth_session
         self.api_client = api_client
-        self.generate_dates = GenerateDates()
+        self.generate_dates = BookingResponseData()
 
     def create_check_delete_booking(self):
         '''

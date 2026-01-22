@@ -1,9 +1,8 @@
-
 import pytest
 from pydantic import BaseModel, ValidationError
 from requests import Response
 from typing import Type, List, Optional
-from src.data_models.project_data_all_bookings import Bookings
+from PythonProject1.src.data_models.project_data_all_bookings import Bookings
 
 def validate_booking_list(
     response: Response,

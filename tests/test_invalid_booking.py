@@ -1,7 +1,7 @@
-from src.utils.urls import URLs
-from src.enums.constant_of_url import ConstURL
-from src.data_models.project_data import BookingResponseData
-from src.utils.project_data_validator import validate_dates
+from PythonProject1.src.utils.urls import URLs
+from PythonProject1.src.enums.constant_of_url import ConstURL
+from PythonProject1.src.data_models.project_data import BookingResponseData
+from PythonProject1.src.utils.project_data_validator import validate_dates
 
 class TestBookings:
 

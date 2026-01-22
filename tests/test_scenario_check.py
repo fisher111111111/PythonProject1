@@ -1,5 +1,5 @@
 
-from src.enums.constant_of_headers import ConstHeaders
+from PythonProject1.src.enums.constant_of_headers import ConstHeaders
 
 class TestPingScenario:
 

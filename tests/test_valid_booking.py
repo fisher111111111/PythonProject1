@@ -1,10 +1,10 @@
-from src.utils.urls import URLs
-from src.data_models.project_data import BookingResponseData
-from src.data_models.project_data_patch import BookingPatchData
-from src.data_models.project_data_all_bookings import Bookings
-from src.utils.project_data_validator import validate_dates
-from src.utils.project_patch_data_validator import validate_patch_dates
-from src.utils.project_data_all_bookings_validator import validate_booking_list
+from PythonProject1.src.utils.urls import URLs
+from PythonProject1.src.data_models.project_data import BookingResponseData
+from PythonProject1.src.data_models.project_data_patch import BookingPatchData
+from PythonProject1.src.data_models.project_data_all_bookings import Bookings
+from PythonProject1.src.utils.project_data_validator import validate_dates
+from PythonProject1.src.utils.project_patch_data_validator import validate_patch_dates
+from PythonProject1.src.utils.project_data_all_bookings_validator import validate_booking_list
 
 class TestBookings:
 

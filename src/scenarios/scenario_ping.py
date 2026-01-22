@@ -1,5 +1,5 @@
 import requests
-from src.api.health_check import HealthCheck
+from PythonProject1.src.api.health_check import HealthCheck
 
 import time
 from datetime import timedelta
